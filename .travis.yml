@@ -13,7 +13,7 @@ before_script:
   - cargo install-update -a
 
 script:
-  - mdbook build book && mdbook test book
+  - mdbook build && mdbook test
 
 deploy:
   provider: pages
