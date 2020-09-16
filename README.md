@@ -1,2 +1,2 @@
-# book
-The Roux Book -- answers to all Roux questions in one place
+# The Roux Reader [![Build Status](https://travis-ci.com/rouxers/book.svg?branch=master)](https://travis-ci.com/rouxers/book)
+Answers to all your Roux questions in one place
