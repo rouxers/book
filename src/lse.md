@@ -17,7 +17,7 @@ Learn from text descriptions below:
 
 ### MC vs. Non-MC: better early than late
 
-### Should I add EOFB on top of EOLR?
+### Should I add EOBF on top of EOLR?
 
 ## 4c Prediction: battle of recog methods
 
