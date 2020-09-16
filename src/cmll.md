@@ -12,4 +12,6 @@
 
 ## Predicting EO from CMLL
 
-## CMLLEO / Pinky Pie / L10P Variants
+## Predicting LR Edges from CMLL
+
+## CMLLEO / Pinkie Pie / L10P Variants
