@@ -4,7 +4,7 @@
 
 <!-- - [FAQs](./faqs.md) -->
 
-- [BlockBuilding](./blockbuilding.md)
+- [Blockbuilding](./blockbuilding.md)
     - [First Block](./fb.md)
     - [Second Block](./sb.md)
     - [Advanced: FB+DR & more](./fb+dr.md)
@@ -18,6 +18,7 @@
 - [Resources for Beginners](./beginner.md)
 
 - [Tips on Switching from CFOP](.switching.md)
+
 <!-- - [Advanced Topics](./advanced.md) -->
 <!---
     - [How to FB+DR](./fbdr.md)
