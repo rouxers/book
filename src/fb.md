@@ -51,4 +51,4 @@ Example Solves:
 ## How To Bring your inspection down to 15 seconds
 
 
-- [Partial SpeedBLD technique by Kian](https://www.youtube.com/watch?v=4KLFyN6ZDwk) - This is definitely underrated as a practice approach! Do them regularly, as warmup before solves!
+- [Partial SpeedBLD technique by Kian](https://www.youtube.com/watch?v=4KLFyN6ZDwk) - This is definitely underrated as a practice approach! Do them regularly as warmup before solves!
