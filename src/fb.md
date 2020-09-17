@@ -21,12 +21,12 @@ There are broadly speaking two families of FB building strategy: square + pair a
 
 Overall strategy:
 - [Finding an Efficient FB in Inspection](https://www.youtube.com/watch?v=0Cq3YDud1dA)
-- [Iuri's LINE + LINE first block](https://www.youtube.com/watch?v=i9zxR5mkgQs)
+- [Iuri's Line + Line first block](https://www.youtube.com/watch?v=i9zxR5mkgQs)
 
 Example Solves:
-- [Kavin's PAIR + PAIR Example Solves](https://www.youtube.com/watch?v=sRTVptb2QrY)
+- [Kavin's Pair + Pair Example Solves](https://www.youtube.com/watch?v=sRTVptb2QrY)
 
-- [Kavin's SQUARE + PAIR Example Solves](https://www.youtube.com/watch?v=YyY_okZ5Fj0)
+- [Kavin's Square + Pair Example Solves](https://www.youtube.com/watch?v=YyY_okZ5Fj0)
 
 - Louis' Video
 
