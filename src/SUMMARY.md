@@ -2,7 +2,6 @@
 
 [Introduction](./intro.md)
 
-<!-- - [FAQs](./faqs.md) -->
 
 - [Blockbuilding](./blockbuilding.md)
     - [First Block](./fb.md)
@@ -24,5 +23,6 @@
     - [How to FB+DR](./fbdr.md)
 --->
 
+- [Frequently Asked Questions](./faqs.md)
 
 [Contributors](./contributors.md)
