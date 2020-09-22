@@ -1,40 +1,52 @@
 # First Block
 
-## Choosing your Orientation
+## Solution
 
-x2y neutrality is highly recommended. It is the minimal orientation that enables you to use ANY premade pairs. If you adopt y or x2y2 instead, the probability of using a premade pair is reduced by half, so you'll get more difficult cases on average, but it's still somewhat acceptable. Anything below y or x2y2 would heavily limit your choices, and is recommended against.
+### Step I: Basic Blockbuilding Strategies
 
+Transitioning from the beginner method of edge loading spots, you should be aware of different blockbuilding strategies. There are broadly speaking two families of FB building strategy: `square + pair` and `line + line`, with the first one being more frequently used.
 
-<!-- (on a side note: x2y2 means that you're more sensitive to the L/R sides as their colors are fixed.  ) -->
-
-Regarding full CN: it is a plus, but the benefits have not been proven as there has yet to be a world class full CN Rouxer. Some speculate the benefits would be minimal because there is limited time during inspection to analyse all 24 FB options. However, a counterpoint would be that for any first square, you have two choices of last pair to extend to a FB, making the last pair case much better on average. Therefore, once you find a good first square, you can usually settle on it and make better use of your inspection time by looking further into the solve. 
-
-TL;DR: CN Roux is worth exploring, but don't force yourself.
-
-If you are interested in the average movecount comparison of FB or FB + DR under different orientations, use the following resource:
-
-- [Movecount statistics](https://docs.google.com/spreadsheets/d/1EectP3O_qwQp_2WohbDrlohxhs2ee17sjFfxZr_-D1g/edit#gid=0) - Notice how x2y boosts chance of easy first square compared to y from 60% to 80%.
-
-## Blockbuilding Strategies
-
-There are broadly speaking two families of FB building strategy: square + pair and line + line. See resources below:
+It is recommended to watch videos on blockbuilding strategies and have a basic understanding before you proceed to example solves.
 
 Overall strategy:
 - [Finding an Efficient FB in Inspection](https://www.youtube.com/watch?v=0Cq3YDud1dA)
+- [Louis' First Block Tutorial](https://www.youtube.com/playlist?list=PLAmLIbUNCUR_e9lmyvcjAb18qlnJ72hGv)
 - [Iuri's Line + Line first block](https://www.youtube.com/watch?v=i9zxR5mkgQs)
 
-Example Solves:
-- [Kavin's Pair + Pair Example Solves](https://www.youtube.com/watch?v=sRTVptb2QrY)
+Beginner-friendly Example Solves:
+- Kavin's Example Solves.
+  - [Pair + Pair Example Solves](https://www.youtube.com/watch?v=sRTVptb2QrY)
+  - [Square + Pair Example Solves](https://www.youtube.com/watch?v=YyY_okZ5Fj0)
+  - These illustrate pure `square + pair` FB building -- they don't involve advanced stuff like influencing.
 
-- [Kavin's Square + Pair Example Solves](https://www.youtube.com/watch?v=YyY_okZ5Fj0)
+### Relationship to Planning
+Before we go on, note that `planning = solution + tracking`, with solution playing perhaps a more important role. For now stay stuned on getting you solutions right, and we'll cover tracking in the last section.
 
-- Louis' Video
+### Step II: Improve Your Solutions
 
+Next, you want to improve your solutions. There are several aspects you can work on, in no particular order. Not only are easier solutions faster to execute, but the ability to come up with them so will also help bring down your inspection time.
+g.
+
+- Influencing
+    - `square + pair` and `line1 + line2` are both two-stage solutions, and the point is we want to find alternative ways to solve the first stage i.e. `square`/`line1` so we get a better second stage case i.e. `pair`/`line2`.
+
+- Optimize your Last Pair solution
+    - FB last pair has lots of cases and elegant solutions can escape your notice. Drill on these in the following ways: use trainers to get random cases and reference the solutions; do untimed solves and experiment around with different ways to solve the same LP case
+
+- Watch Example Solves
+    - Trainers can only help you so far -- example FB solves remain the best way to learn new ideas. Either watch example solves or go over text reconstructions.
+
+- Develop a Taste for good FB / FS
+    - Taste is about being able to tell an easy FB from a hard one quickly without fully planning it out. This would help you take advantage of all the FB options given by your orientation.
+
+Videos:
 - Kian's Example Solves
 
-- Cubesolve.es, search for Kian, Alex or Sean
-
-- Anto's reconstruction sheet
+Reconstructions (text):
+- Search for Kian, Alex or Sean's solves on speedcubing databases:
+    - [SpeedCubeDB](http://speedcubedb.com/r/index/) - a modern database, roux solves yet to be added
+    - [CubeSolves](http://cubesolv.es) - plenty of solves, but no longer maintained
+- More reconstructions can be found on [Anto's subreddit](https://www.reddit.com/r/rouxles/)
 
 
 ## Turning
@@ -48,7 +60,7 @@ Example Solves:
 
 - Also, develop a preference for what pairs / triggers are easy for you to execute over time, and try to prioritize them in your FB solution. Use this to guide your FB planning instead of move count as this is more precise and correlated to actual times.
 
-## How To Bring your inspection down to 15 seconds
+## FB Planning / Piece Tracking
 
-
-- [Partial SpeedBLD technique by Kian](https://www.youtube.com/watch?v=4KLFyN6ZDwk) - This is definitely underrated as a practice approach! Do them regularly as warmup before solves!
+(...todo)
+- [Partial SpeedBLD technique by Kian](https://www.youtube.com/watch?v=4KLFyN6ZDwk) - This is arguably underrated as a practice approach. You should try to do them regularly as warmup before solves.
