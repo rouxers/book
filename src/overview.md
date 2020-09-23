@@ -1,15 +1,4 @@
-# The Roux Reader [![Build Status](https://travis-ci.com/rouxers/book.svg?branch=master)](https://travis-ci.com/rouxers/book)
-Answers to all your Roux questions in one place.
-
-[Website](https://book.rouxers.com)
-
-====
-
-## Introduction
-Cubing resources are easy to procure, but they often lack the proper **annotations** to explain the context -- When should I learn this? How much faster will I be? Is X the only way to Y? What sort of progression should I expect? Is this the best quality resource out there? As a result, cubers might get confused about what to learn next, or spent time learning stuff way too advanced for their level.
-
-That's the motivation behind the Roux Reader. It hopes to fill this gap for Roux method speedsolvers -- it is the missing **user manual** that explains **how to pick the top quality resources that are best suited to your skill level**, and how to set expectations when learning them.
-
+# Overview
 
 ## How to Read the Reader?
 
@@ -37,5 +26,4 @@ If you have any questions / doubts / suggestions to any content, please also rea
 
 - version 0.1
     - This project is still in its early phase as of Sept 22. (v0.1) We hope to get most of the content up there in a few weeks, so stay tuned for updates!
-
 
