@@ -7,7 +7,7 @@ DR first is used by most of the world-level rouxers today including Kian Mansour
 
 Freestyle, in contrast, allows you to be flexible with how you build the second square. It is a superset of DR first. Strategies include make a pair then insert the remaining edge, or insert any edge then insert the remaining pair.
 
-The consensus is while freestyle potentially leads to better efficiency, it is more demanding of your recognition and tracking skills[^1]. Emperically,   it has yet to be proven that freestyle can serve as a standalone strategy to attain a speed level comparable to those using DR-first.
+The consensus is while freestyle potentially leads to better efficiency, it is more demanding of your recognition and tracking skills[^1]. Empirically,   it has yet to be proven that freestyle can serve as a standalone strategy to attain a speed level comparable to those using DR-first.
 
 In general, DR first is recommended to beginners and advanced cubers alike as the dominant strategy, while freestyle can act as a supplement, offering shortcuts to building SS whenever you happen to recognize a few easy freestyle patterns as they show up. These SS techniques will be mentioned in the section below.
 

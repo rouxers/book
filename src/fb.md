@@ -25,10 +25,9 @@ Before we go on, note that `planning = solution + tracking`, with solution playi
 ### Step II: Improve Your Solutions
 
 Next, you want to improve your solutions. There are several aspects you can work on, in no particular order. Not only are easier solutions faster to execute, but the ability to come up with them so will also help bring down your inspection time.
-g.
 
 - Influencing
-    - `square + pair` and `line1 + line2` are both two-stage solutions, and the point is we want to find alternative ways to solve the first stage i.e. `square`/`line1` so we get a better second stage case i.e. `pair`/`line2`.
+    - `square + pair` and `line + line` are both two-stage solutions, and the point is we want to find alternative ways to solve the first stage i.e. `square`/`E-line` so we get a better second stage case i.e. `pair`/`D-line`, respectively. [^1]
 
 - Optimize your Last Pair solution
     - FB last pair has lots of cases and elegant solutions can escape your notice. Drill on these in the following ways: use trainers to get random cases and reference the solutions; do untimed solves and experiment around with different ways to solve the same LP case
@@ -64,3 +63,5 @@ Reconstructions (text):
 
 (...todo)
 - [Partial SpeedBLD technique by Kian](https://www.youtube.com/watch?v=4KLFyN6ZDwk) - This is arguably underrated as a practice approach. You should try to do them regularly as warmup before solves.
+
+[^1]: The "line + line" strategy refers to two lines: E-line (2 edges and 1 center on the E slice) and D-line (1 edge and 2 corners on the D slice). E-lines are usually formed first.

@@ -26,7 +26,7 @@ Among the commonly seen orientations, x2y offers 8 FB options, while both y and 
 
 <!-- (on a side note: x2y2 means that you're more sensitive to the L/R sides as their colors are fixed.  ) -->
 
-Regarding CN: it gives you 24 options for FB, which is definitely a plus over x2y, but the benefits have not been proven as there has yet to be a world class full CN Rouxer.Some speculate the benefits would be minimal because there is limited time during inspection to analyse all 24 FB options. However, a counterpoint would be that for any first square, you have two choices of last pair to extend to a FB, making the last pair case much better on average. Therefore, once you find a good first square, you can usually settle on it and make better use of your inspection time by looking further into the solve. TL;DR: CN Roux is worthy of exploring, but don't force yourself.
+Regarding CN: it gives you 24 options for FB, which is definitely a plus over x2y, but the benefits have not been proven as there has yet to be a world class full CN Rouxer. Some speculate the benefits would be minimal because there is limited time during inspection to analyse all 24 FB options. However, a counterpoint would be that for any first square, you have two choices of last pair to extend to a FB, making the last pair case much better on average. Therefore, once you find a good first square, you can usually settle on it and make better use of your inspection time by looking further into the solve. TL;DR: CN Roux is worthy of exploring, but don't force yourself.
 
 If you are interested in the average movecount comparison of FB or FB + DR under different orientations, use the following resource:
 
