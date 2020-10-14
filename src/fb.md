@@ -20,7 +20,7 @@ Beginner-friendly Example Solves:
   - These illustrate pure `square + pair` FB building -- they don't involve advanced stuff like influencing.
 
 ### Relationship to Planning
-Before we go on, note that `planning = solution + tracking`, with solution playing perhaps a more important role. For now stay stuned on getting you solutions right, and we'll cover tracking in the last section.
+Before we go on, note that `planning = solution + tracking`, with solution playing perhaps a more important role. For now stay tuned on getting your solutions right, and we'll cover tracking in the last section.
 
 ### Step II: Improve Your Solutions
 
