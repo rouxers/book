@@ -1,3 +1,5 @@
+<script type="text/javascript" src="twistysim.js"></script>
+
 # First Block
 
 ## Solution
@@ -29,6 +31,18 @@ Next, you want to improve your solutions. There are several aspects you can work
 - Influencing
     - `square + pair` and `line + line` are both two-stage solutions, and the point is we want to find alternative ways to solve the first stage i.e. `square`/`E-line` so we get a better second stage case i.e. `pair`/`D-line`, respectively. [^1]
 
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+	.alg("F D R2 F2")
+	('#ap1');			
+</script>
+
+`
+F // set up LP corner to match with edge during the D move
+D R2 F2
+// without LP influencing, 1 move longer
+`
+
 - Optimize your Last Pair solution
     - FB last pair has lots of cases and elegant solutions can escape your notice. Drill on these in the following ways: use trainers to get random cases and reference the solutions; do untimed solves and experiment around with different ways to solve the same LP case
 
@@ -46,7 +60,6 @@ Reconstructions (text):
     - [SpeedCubeDB](http://speedcubedb.com/r/index/) - a modern database, roux solves yet to be added
     - [CubeSolves](http://cubesolv.es) - plenty of solves, but no longer maintained
 - More reconstructions can be found on [Anto's subreddit](https://www.reddit.com/r/rouxles/)
-
 
 ## Turning
 
