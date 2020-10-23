@@ -1,3 +1,4 @@
+<script type="text/javascript" src="twistysim.js"></script>
 # First Block
 
 ## Solution
