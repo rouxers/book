@@ -31,17 +31,21 @@ Next, you want to improve your solutions. There are several aspects you can work
 - Influencing
     - `square + pair` and `line + line` are both two-stage solutions, and the point is we want to find alternative ways to solve the first stage i.e. `square`/`E-line` so we get a better second stage case i.e. `pair`/`D-line`, respectively. [^1]
 
+Influencing examples:
+
+<div id="inf1">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
-	.alg("F D R2 F2")
-	('#ap1');			
+    .size({width:400, height:400})
+    .case("y2 B' F2' U2' B2' R U2' R' D2' U2' B2' R2' F2' L D B' L' R2' U B2' U' B' x2")
+    .alg("B' L' B2 D2")
+    ('#inf1');
 </script>
 
-`
-F // set up LP corner to match with edge during the D move
-D R2 F2
-// without LP influencing, 1 move longer
-`
+We see that `L' B2` can build the bottom line of FB,
+but starting with a `B'` leverages the `B2` to also insert the back edge, for a `line + line` block.
+</div>
+
 
 - Optimize your Last Pair solution
     - FB last pair has lots of cases and elegant solutions can escape your notice. Drill on these in the following ways: use trainers to get random cases and reference the solutions; do untimed solves and experiment around with different ways to solve the same LP case
