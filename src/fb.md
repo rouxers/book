@@ -41,11 +41,33 @@ Influencing examples:
     .alg("B' L' B2 D2")
     ('#inf1');
 </script>
+</div>
+
+<!-- with hollow -->
+<div id="inf2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("B' L' B2 D2")
+    ('#inf2');
+</script>
 
 We see that `L' B2` can build the bottom line of FB,
 but starting with a `B'` leverages the `B2` to also insert the back edge, for a `line + line` block.
 </div>
 
+<div id="inf3">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("U2 F R2 B'")
+    ('#inf3');
+</script>
+
+`U2` to align the back pair's corner with its edge after the `F`
+</div>
 
 - Optimize your Last Pair solution
     - FB last pair has lots of cases and elegant solutions can escape your notice. Drill on these in the following ways: use trainers to get random cases and reference the solutions; do untimed solves and experiment around with different ways to solve the same LP case
