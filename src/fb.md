@@ -136,7 +136,39 @@ Starting with `U2` leverages the `F` to align the front pair's corner to its edg
 
 `L2 D'` builds the front square.
 
-The final pair's corner cannot be influenced during the square solution, so we 
+Starting off with `U2` leverages the `L2` to connect the back pair's corner with its edge.
+</div>
+
+<div id="inf8">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("F D R2 F2")
+    ('#inf8');
+</script>
+
+`D` builds the back square.
+
+Starting off with `F` leverages the `D` to connect the front pair's corner with its edge.
+</div>
+
+<!-- U' L' U2 L D B2 -->
+<div id="inf9">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("U' L' U2 L D B2")
+    ('#inf9');
+</script>
+
+`L' U L D` builds the front square.
+
+During the `L'` move, the final pair's corner is `U2` away from being connected with its edge.
+
+Starting off with `U'` makes us do that desired `U2` after the `L'` to insert the front pair's edge whilst
+connecting the back pair's corner with its edge.
 </div>
 
 - Optimize your Last Pair solution
