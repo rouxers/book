@@ -26,10 +26,15 @@ Before we go on, note that `planning = solution + tracking`, with solution playi
 
 ### Step II: Improve Your Solutions
 
-Next, you want to improve your solutions. There are several aspects you can work on, in no particular order. Not only are easier solutions faster to execute, but the ability to come up with them so will also help bring down your inspection time.
+Next, you want to improve your solutions. There are several aspects you can work on, in no particular order. Not only are easier solutions faster to execute, but the ability to come up with them will also help bring down your inspection time.
 
 - Influencing
     - `square + pair` and `line + line` are both two-stage solutions, and the point is we want to find alternative ways to solve the first stage i.e. `square`/`E-line` so we get a better second stage case i.e. `pair`/`D-line`, respectively. [^1]
+    - Influencing involves altering your initial first stage solution so that the second stage case is better than without any influencing, and your overall FB solution is also better.
+    - Typically in first stage solutions, one of the final pieces of the second stage (edge or corner) cannot 
+    be influenced. Predict where the uninfluencable piece will end up after the first stage, and attempt to influence the influencable piece to improve the second stage case.
+    - Your influencing moveset will be restricted in some way so it doesn't affect your first stage solution, so visualise the effect of moves within this moveset on influencable pieces to figure out your influencing moves (if any).
+    - Note that influencing is not always applicable or necessary.
 
 Influencing examples:
 
@@ -37,13 +42,17 @@ Influencing examples:
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:400, height:400})
-    .case("y2 B' F2' U2' B2' R U2' R' D2' U2' B2' R2' F2' L D B' L' R2' U B2' U' B' x2")
-    .alg("B' L' B2 D2")
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("U R' D F' r' F")
     ('#inf1');
 </script>
+
+`R' D` builds the back square.
+
+Starting with `U` leverages the `R'` to align the front pair's edge with its corner, 
+building the front pair after the `D`.
 </div>
 
-<!-- with hollow -->
 <div id="inf2">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -53,8 +62,9 @@ Influencing examples:
     ('#inf2');
 </script>
 
-We see that `L' B2` can build the bottom line of FB,
-but starting with a `B'` leverages the `B2` to also insert the back edge, for a `line + line` block.
+`L' B2` builds the bottom line of FB and orients the blue-red edge.
+
+Starting with `B'` leverages the `B2` to also insert the back edge, for a `line + line` block.
 </div>
 
 <div id="inf3">
@@ -66,7 +76,99 @@ but starting with a `B'` leverages the `B2` to also insert the back edge, for a 
     ('#inf3');
 </script>
 
-`U2` to align the back pair's corner with its edge after the `F`
+`F` builds the front square.
+
+Starting with `U2` leverages the `F` to align the back pair's corner with its edge.
+</div>
+
+<div id="inf4">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("R' B U2 F2")
+    ('#inf4');
+</script>
+
+`B` builds the back square.
+
+Starting with `R'` sets up a much easier last pair solution.
+
+Additionally, `R B M2 F` is another FB solution with influencing.
+</div>
+
+<div id="inf5">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("L B' D M F")
+    ('#inf5');
+</script>
+
+`B' D` builds the back square.
+
+Starting with `L` leverages the `D` to align the front pair's corner with its edge.
+</div>
+
+<div id="inf6">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("U2 F D' R' F")
+    ('#inf6');
+</script>
+
+`F D'` builds the back square.
+
+Starting with `U2` leverages the `F` to align the front pair's corner to its edge after the edge moves from the `D'`.
+</div>
+
+<div id="inf7">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("U2 L2 D' B")
+    ('#inf7');
+</script>
+
+`L2 D'` builds the front square.
+
+Starting off with `U2` leverages the `L2` to connect the back pair's corner with its edge.
+</div>
+
+<div id="inf8">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("F D R2 F2")
+    ('#inf8');
+</script>
+
+`D` builds the back square.
+
+Starting off with `F` leverages the `D` to connect the front pair's corner with its edge.
+</div>
+
+<!-- U' L' U2 L D B2 -->
+<div id="inf9">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("U' L' U2 L D B2")
+    ('#inf9');
+</script>
+
+`L' U L D` builds the front square.
+
+During the `L'` move, the final pair's corner is `U2` away from being connected with its edge.
+
+Starting off with `U'` makes us do that desired `U2` after the `L'` to insert the front pair's edge whilst
+connecting the back pair's corner with its edge.
 </div>
 
 - Optimize your Last Pair solution
