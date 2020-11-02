@@ -30,11 +30,11 @@ Next, you want to improve your solutions. There are several aspects you can work
 
 - Influencing
     - `square + pair` and `line + line` are both two-stage solutions, and the point is we want to find alternative ways to solve the first stage i.e. `square`/`E-line` so we get a better second stage case i.e. `pair`/`D-line`, respectively. [^1]
-    - influencing involves prepending some move/s to your first stage solution so that the second stage case is better than without any influencing, and your overall FB solution is also better.
-    - typically in first stage solutions, one of the final pieces of the second stage (edge or corner) cannot 
+    - Influencing involves altering your initial first stage solution so that the second stage case is better than without any influencing, and your overall FB solution is also better.
+    - Typically in first stage solutions, one of the final pieces of the second stage (edge or corner) cannot 
     be influenced. Predict where the uninfluencable piece will end up after the first stage, and attempt to influence the influencable piece to improve the second stage case.
-    - your influencing moveset will be restricted in some way so it doesn't affect your first stage solution, so visualise the effect of moves within this moveset on influencable pieces to figure out your influencing moves (if any).
-    - note that influencing is not always applicable or necessary.
+    - Your influencing moveset will be restricted in some way so it doesn't affect your first stage solution, so visualise the effect of moves within this moveset on influencable pieces to figure out your influencing moves (if any).
+    - Note that influencing is not always applicable or necessary.
 
 Influencing examples:
 
