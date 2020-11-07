@@ -5,6 +5,9 @@
 
 This chapter talks about how to improve blockbuilding. We'll go over orientation, first block, second block, and alternative blockbuilding stragies.
 
+## General blockbuilding strategies
+
+Read about [blockbuilding](https://fmcsolves.cubing.net/fmc_tutorial_ENG.pdf#section.2.1) for examples and explanations of the basic blockbuilding strategies.
 
 ## First block vs. Second block: A brief overview
 
@@ -30,4 +33,4 @@ Regarding CN: it gives you 24 options for FB, which is definitely a plus over x2
 
 If you are interested in the average movecount comparison of FB or FB + DR under different orientations, use the following resource:
 
-- [Movecount statistics](https://docs.google.com/spreadsheets/d/1EectP3O_qwQp_2WohbDrlohxhs2ee17sjFfxZr_-D1g/edit#gid=0) - Notice how x2y boosts chance of easy first square compared to y from 60% to 80%.
+- [Movecount statistics](https://docs.google.com/spreadsheets/d/1EectP3O_qwQp_2WohbDrlohxhs2ee17sjFfxZr_-D1g/edit#gid=0) - Notice how x2y boosts the chance of an easy first square compared to y from 60% to 80%.
