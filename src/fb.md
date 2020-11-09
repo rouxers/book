@@ -36,9 +36,9 @@ Next, you want to improve your solutions. There are several aspects you can work
       and [example 2](#inf2).
       2. Adding influencing moves to an already existing first stage solution.
     - Influencing moves can be used to move second stage pieces with 2 different intents:
-      1. so that they'll be affected by first stage solution moves to achieve better orientation, 
+      1. So that they'll be affected by first stage solution moves to achieve better orientation, 
       as seen in the majority of examples.
-      2. so that they won't be affected by first stage solution moves, such as when second stage pieces are in a good orientation or alignment (either before or after first stage), and first stage ruins that characteristic, as seen in [example 12](#inf12).
+      2. So that they won't be affected by first stage solution moves, such as when second stage pieces are in a good orientation or alignment (either before or after first stage), and first stage ruins that characteristic, as seen in [example 12](#inf12).
     - Typically in first stage solutions, one of the final pieces of the second stage (edge or corner) cannot 
     be influenced, or is not worth influencing. Predict where the uninfluencable piece will end up after the first stage, and attempt to influence the influencable piece to improve the second stage case.
     - Your influencing moveset will be restricted in some way so it doesn't affect your first stage solution, so visualise the effect of moves within this moveset on influencable pieces to figure out your influencing moves (if any).
