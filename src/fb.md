@@ -271,7 +271,7 @@ Starting with `R` leverages the `B` to align the front pair's edge with its corn
 </div>
 
 - Optimize your Last Pair solution
-    - FB last pair has lots of cases and elegant solutions can escape your notice. Drill on these in the following ways: use trainers to get random cases and reference the solutions; do untimed solves and experiment around with different ways to solve the same LP case
+    - FB last pair has lots of cases and elegant solutions can escape your notice. Drill on these in the following ways: use trainers to get random cases and reference the solutions; do untimed solves and experiment around with different ways to solve the same LP case.
 
 - Watch Example Solves
     - Trainers can only help you so far -- example FB solves remain the best way to learn new ideas. Either watch example solves or go over text reconstructions.
@@ -301,7 +301,19 @@ Reconstructions (text):
 
 ## FB Planning / Piece Tracking
 
-(...todo)
+- If you cannot plan FB entirely, try to plan FS first.
+- Planning LP:
+    - Only need to calculate:
+        - The edge's position and orientation after FS.
+        - The corner's position and location of its D-face sticker (white or yellow if x2y) after FS.
+    - From the above information, one should be able to determine the LP case and solve accordingly.
+    - For example, if the LP edge (FL) is an F move from being solved, the LP corner can be placed at DFR with its D-face sticker on the R face to solve LP with an F move.
+    - If you calculate that the LP case is bad or mediocre, then try to influence.
+- Similar logic applies with planning FB line solutions or two-stage solutions in general:
+    1. Determine solution for the first stage.
+    2. Calculate required position/orientation information of second stage pieces.
+    3. Attempt influencing for better overall FB, factoring in fingertrickiness.
+    4. Execute!
 - [Partial SpeedBLD technique by Kian](https://www.youtube.com/watch?v=4KLFyN6ZDwk) - This is arguably underrated as a practice approach. You should try to do them regularly as warmup before solves.
 
 [^1]: The "line + line" strategy refers to two lines: E-line (2 edges and 1 center on the E slice) and D-line (1 edge and 2 corners on the D slice). E-lines are usually formed first.
