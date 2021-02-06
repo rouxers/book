@@ -239,7 +239,19 @@ Starting with `U2` leverages the `F` to align the front pair's corner to its edg
 </div>
 
 **Example 13**
+<div id="inf13">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("B' F' U F' R B2")
+    ('#inf13');
+</script>
 
+`F' U F'` builds the front square.
+
+Starting with `B'` leverages the `U` to align the back pair's corner to its edge, and pairs them after the final `F'`.
+</div>
 
 **Example 14**
 <div id="inf14">
