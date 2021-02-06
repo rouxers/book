@@ -222,7 +222,6 @@ building the front pair after the `D`.
 Starting with `R` leverages the `B` to align the front pair's edge with its corner.
 </div>
 
-
 **Example 12**
 <div id="inf12">
 <script type="text/javascript">
@@ -244,13 +243,18 @@ Starting with `U2` leverages the `F` to align the front pair's corner to its edg
   TTk.AlgorithmPuzzle(3)
     .size({width:400, height:400})
     .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
-    .case("B' F' U F' R B2")
+    .case("R F' D R' U' B")
     ('#inf13');
 </script>
 
-`F' U F'` builds the front square.
+`F' D` builds the front square. 
+Back pair's corner is clearly uninfluencable, so predict the back pair's corner's position and orientation, and then aim to influence the back pair's edge. 
 
-Starting with `B'` leverages the `U` to align the back pair's corner to its edge, and pairs them after the final `F'`.
+We can predict the back pair's corner will be at DBR after first stage, with its D-face sticker on the bottom. 
+
+We should know from experience that the back pair's edge needs to be misoriented in BR to pair with the back pair's corner, when the back pair's corner is in DBR with its D-face sticker on the bottom.
+
+Thus, starting with `R` setups up a connected last pair for an easy 3 move second stage.
 </div>
 
 **Example 14**
@@ -274,8 +278,23 @@ Adding an `L` after the `D'` leverages the `D` to align the front pair's edge wi
   TTk.AlgorithmPuzzle(3)
     .size({width:400, height:400})
     .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
-    .case("U' L' U2 L D B2")
+    .case("B' F' U F' R B2")
     ('#inf15');
+</script>
+
+`F' U F'` builds the front square.
+
+Starting with `B'` leverages the `U` to align the back pair's corner to its edge, and pairs them after the final `F'`.
+</div>
+
+**Example 16**
+<div id="inf16">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("U' L' U2 L D B2")
+    ('#inf16');
 </script>
 
 `L' U L D` builds the front square.
@@ -285,6 +304,8 @@ During the `L'` move, the final pair's corner is `U2` away from being connected 
 Starting with `U'` makes us do that desired `U2` after the `L'` to insert the front pair's edge whilst
 connecting the back pair's corner with its edge.
 </div>
+
+
 
 - Optimize your Last Pair solution
     - FB last pair has lots of cases and elegant solutions can escape your notice. Drill on these in the following ways: use trainers to get random cases and reference the solutions; do untimed solves and experiment around with different ways to solve the same LP case.
