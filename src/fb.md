@@ -252,9 +252,9 @@ Back pair's corner is clearly uninfluencable, so predict the back pair's corner'
 
 We can predict the back pair's corner will be at DBR after first stage, with its D-face sticker on the bottom. 
 
-We should know from experience that the back pair's edge needs to be misoriented in BR to pair with the back pair's corner, when the back pair's corner is in DBR with its D-face sticker on the bottom.
+We should know from experience that the back pair's edge needs to be misoriented in BR to pair with the back pair's corner when the back pair's corner is in DBR with its D-face sticker on the bottom.
 
-Thus, starting with `R` setups up a connected last pair for an easy 3 move second stage.
+Thus, starting with `R` connects the back pair's edge and corner after first stage, for an easy 3 move second stage.
 </div>
 
 **Example 14**
