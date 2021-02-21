@@ -205,7 +205,7 @@ Starting with `L` leverages the `D` to align the front pair's corner with its ed
     ('#inf9');
 </script>
 
-`L' B2` builds the bottom line of FB and orients the blue-red edge.
+`L' B2` builds the bottom line of FB and solves the blue-red edge.
 
 Starting with `B'` leverages the `B2` to also insert the back edge, for a `line + line` block.
 </div>
@@ -323,8 +323,6 @@ During the `L'` move, the final pair's corner is `U2` away from being connected 
 Starting with `U'` makes us do that desired `U2` after the `L'` to insert the front pair's edge whilst
 connecting the back pair's corner with its edge.
 </div>
-
-<!-- new ones -->
 
 **Example 17**
 <div id="inf17">
