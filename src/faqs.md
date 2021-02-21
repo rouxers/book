@@ -12,5 +12,5 @@ We recommend looking at solves from fast roux solvers (Kian, Sean, etc.), and un
 
 We also recommend using the following block trainers to practice identifying optimal solutions for blocks
 - [Cubegrass Block Trainer (Contains Full FB, SB, SS and SS Trainers)](https://cubegrass.appspot.com/block_trainer/)
-- [Zhouheng's Block Trainer (Contains Full Tough FB, Pair+DR, SS Trainers)](https://onionhoney.github.io/roux-trainers/)
+- [Zhouheng's Block Trainer (Contains Full Tough FB, Pair+DR, SS, Tracking Trainers)](https://onionhoney.github.io/roux-trainers/)
 
