@@ -30,6 +30,25 @@ Beginner-friendly Example Solves:
 ### Relationship to Planning
 Before we go on, note that `planning = solution + tracking`, with solution playing perhaps a more important role. For now stay tuned on getting your solutions right, and we'll cover tracking in the last section.
 
+## Understanding relation of each FB pair's pieces and how they can be solved
+This is crucial for understanding many of the influencing solutions and determining how to solve second stage after predicting first stage.
+
+The minimum information needed to know how to solve a FB pair:
+- FB pair's edge position and orientation
+- FB pair's corner's position and location of its D-face sticker
+
+For example, if the front pair's corner is on the `U` layer with its D-face sticker also on the `U` layer, then to have the corner be in the same alignment with its edge (such that when they're adjacent, they form a correctly connected pair):
+- the edge can be placed in FR in an orientation such that it is an `F2` from being solved.
+- the edge can be placed misoriented in its solved position (FL).
+- the edge can be placed in BR such that the edge will be solved with `R2 F2`.
+
+These relations can be understood through experience and observation. Using a trainer as well as always observing the aforementioned minimum information of an FB pair before solving it helps.
+
+The above logic can be applied to line solutions as well, especially with understanding how to pair the DL edge with an FB corner to build the D-line. For example:
+- DL edge is in DF, and is a `D'` move away from being solved.
+- FB's front corner is in UFR, with its D-face sticker on the R layer.
+- Thus, the corner can be connected with the DL edge using `R U R'`.
+
 ### Step II: Improve Your Solutions
 
 Next, you want to improve your solutions. There are several aspects you can work on, in no particular order. Not only are easier solutions faster to execute, but the ability to come up with them will also help bring down your inspection time.
@@ -186,7 +205,7 @@ Starting with `L` leverages the `D` to align the front pair's corner with its ed
     ('#inf9');
 </script>
 
-`L' B2` builds the bottom line of FB and orients the blue-red edge.
+`L' B2` builds the bottom line of FB and solves the blue-red edge.
 
 Starting with `B'` leverages the `B2` to also insert the back edge, for a `line + line` block.
 </div>
@@ -305,10 +324,31 @@ Starting with `U'` makes us do that desired `U2` after the `L'` to insert the fr
 connecting the back pair's corner with its edge.
 </div>
 
+**Example 17**
+<div id="inf17">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("U2 r U' M2 D' B")
+    ('#inf17');
+</script>
 
+`r U' M2 D'` builds the front square. Back pair's edge can be predicted to be only a `B` move away from being solved after first stage. Without influencing, the second stage solution is 3 moves.
+
+In an attempt to influence, we can try seeing the effect of specific `U` moves before first stage on the back pair's corner (`U` chosen as it doesn't affect first stage, rather than some `B` move):
+- `U` leads to the back pair's corner being aligned with its edge after first stage, but this is still a 3 move second stage solution, so overall solution is longer.
+- Similarly with `U'`, we have a 3 move second stage solution, so overall solution is longer.
+- But with `U2`, the back pair's corner will be in ULF with its D-face sticker on the L face; this means it's a `B` move away from being solved, like the back pair's edge, and thus results in a 1 move second stage solution, saving 1 move overall.
+
+Thus, start with a `U2`.
+
+Note that this solution may have been harder to figure out if we tried `R U' M2 D'` to build the front square.
+
+</div>
 
 - Optimize your Last Pair solution
-    - FB last pair has lots of cases and elegant solutions can escape your notice. Drill on these in the following ways: use trainers to get random cases and reference the solutions; do untimed solves and experiment around with different ways to solve the same LP case.
+    - FB last pair has lots of cases and elegant solutions that can escape your notice. Drill on these in the following ways: use trainers to get random cases and reference the solutions; do untimed solves and experiment around with different ways to solve the same LP case.
 
 - Watch Example Solves
     - Trainers can only help you so far -- example FB solves remain the best way to learn new ideas. Either watch example solves or go over text reconstructions.
@@ -344,13 +384,14 @@ Reconstructions (text):
         - The edge's position and orientation after FS.
         - The corner's position and location of its D-face sticker (white or yellow if x2y) after FS.
     - From the above information, one should be able to determine the LP case and solve accordingly.
-    - For example, if the LP edge (FL) is an F move from being solved, the LP corner can be placed at DFR with its D-face sticker on the R face to solve LP with an F move.
+    - For example, if the LP edge (where LP is the front pair) is an F move from being solved, the LP corner can be placed at DFR with its D-face sticker on the R face to solve LP with an F move.
     - If you calculate that the LP case is bad or mediocre, then try to influence.
 - Similar logic applies with planning FB line solutions or two-stage solutions in general:
     1. Determine solution for the first stage.
     2. Calculate required position/orientation information of second stage pieces.
     3. Attempt influencing for better overall FB, factoring in fingertrickiness.
     4. Execute!
+- [Tracking Trainer by Zhouheng](http://onionhoney.github.io/roux-trainers/#tracking)
 - [Partial SpeedBLD technique by Kian](https://www.youtube.com/watch?v=4KLFyN6ZDwk) - This is arguably underrated as a practice approach. You should try to do them regularly as warmup before solves.
 
 [^1]: The "line + line" strategy refers to two lines: E-line (2 edges and 1 center on the E slice) and D-line (1 edge and 2 corners on the D slice). E-lines are usually formed first.
