@@ -1,0 +1,9 @@
+[book]
+authors = ["Zhouheng Sun","Antonio Kam"]
+language = "cn"
+multilingual = true
+src = "src/cn"
+title = "桥式读本"
+
+[output.html]
+mathjax-support = true

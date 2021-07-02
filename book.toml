@@ -1,9 +1,17 @@
 [book]
-authors = ["Zhouheng Sun","Antonio Kam"]
 language = "en"
 multilingual = false
 src = "src"
+
+[language.en]
+name = "English"
 title = "The Roux Reader"
+authors = ["Zhouheng Sun","Antonio Kam"]
+
+[language.cn]
+name = "中文"
+title = "桥式指南"
+authors = ["Zhouheng Sun"]
 
 [output.html]
 mathjax-support = true
