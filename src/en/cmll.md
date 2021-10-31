@@ -1,3 +1,11 @@
+<script type="text/javascript" src="twistysim.js"></script>
+<style type="text/css" rel="stylesheet">
+/* modifies the opacity of the cube wireframe */
+.ttk-shp-poly {
+    stroke-opacity: 0.3;
+}
+</style>
+
 # CMLL
 
 ## Recognition Method: From beginner's 4-tile to all angles
@@ -20,23 +28,40 @@ It is perfectly fine to stick with this recognition method. It will give you goo
 
 ### III. All Angles Recognition
 
-This stage of recognition eliminates the need to peek or rotations, because here you can recognize the CMLL case from any angle. 
+This stage of recognition eliminates the need to peek or rotate by recognizing cases from every angle.
 
 For "H" and "Pi" CMLL cases, this should be effortless, since all the colors of the corners is already visible on the top face.
 
-To address the other cases, inference can be very helpful. Note that on the four corner pieces, there are only a total of two stickers for each color (red, orange, blue, and green, assuming white and yellow is top and bottom). Based on this, you can infer that a sticker you cannot see is impossible to have a certain color, due to you already being able to see that color twice on the stickers that are visible to you. 
+For the other cases, a combination of the following is used:
+- Inferring the color of the stickers you cannot see
+- Knowing the color patterns of cases very well
+
+It is important to note that on the four corner pieces, there are only a total of two stickers for each color (red, orange, blue, and green, assuming white and yellow is top and bottom). There is also a limited number of combinations of colors on each corner; that is, only adjacent colors appear on one corner piece. 
+
+Based on these properties, we may deduce the color of stickers we cannot see and take advantage of the unique color patterns that are formed. 
+
+Here is an example trying to recognize a "U" case from the given angle:
 
 <div id="inf1">
-<script type="text/javascript">
-  TTk.InteractivePuzzle(3)
-    .size({width:400, height:400})
-    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
-    .rotate(true)
-		.mouse(false)
-		.keyboard(false)
-    ('#inf1');
-</script>
+  <script type="text/javascript">
+    var cube = TTk.InteractivePuzzle(3)
+      .size({width:400, height:400})
+      .fc('wdwwdwwdwggggggrdordrrdrydybdgdddydybbbbbbodrodoodobdg');
+    cube.moveInteract()
+      .mouse(false)
+      .keyboard(false);
+    cube("#inf1");
+  </script>
+</div>
 
+From here we can only see blue and green stickers from the top and the red and orange stickers on the side, but that is enough to tell us exactly which CMLL case this is:
+1. We notice that the two colors on the top, blue and green, are opposite to each other. Using our knowledge of unique color patterns, this brings us down to two possibilities: The ["X"](https://speedcubedb.com/a/3x3/CMLL/U_X) and ["Bottom Row"](https://speedcubedb.com/a/3x3/CMLL/U_Bottom_Row) U cases.
+2. We see that one corner in the back has an orange color on it, so we can infer that the other non-yellow color on that corner has to be blue or green.
+3. Out of the two possibilities, only the "X" case has colors at the back that are adjacent/opposite to the two colors on the top. Here we have blue and green on the top, and we concluded that a sticker on the back must be blue or green, therefore we must have the "X" case here.
+
+Rotate the visual cube to check if we're right.
+
+With enough practice, this thought process will become automatic. But where do we find all the "patterns" that we should know in order to get a case down to two possibilities? [Kian's comprehensive guide on this topic will be your best friend](https://www.youtube.com/watch?v=MKZ7JX-hW4g).
 
 ## Algorithms Resources - 2H
 
