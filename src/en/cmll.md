@@ -14,7 +14,7 @@ CMLL recognition is a little more tricky than something like OLL. Not only does 
 
 ### I. Beginner Recognition
 
-A beginner most likely uses 2-look CMLL, so it is mostly irrelevant for them to pay attention to the colors of the corners. It is adequate to simply get used to recognizing the orientation of the corners.
+Most beginners use 2-look CMLL, so the colors of the corners are mostly irrelevant. As a result, it is adequate to simply get used to recognizing the orientation of the corners.
 
 Practice recognizing the corner orientations fast - this will definitely come in handy later on.
 
