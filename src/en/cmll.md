@@ -10,7 +10,7 @@
 
 ## Recognition Method: From beginner's 4-tile to all angles
 
-CMLL recognition is a little more tricky than something like OLL. Not only does one have to pay attention to the orinetation of the corners, one also has to pay attention to their colors. Despite that, an advanced Roux solver is able to recognize the CMLL case within fractions of a second. Here is the progression towards that.
+CMLL recognition is a little more tricky than something like OLL. Not only does one have to pay attention to the orinetation of the corners, one also has to pay attention to their colors. Despite that, an advanced Roux solver is able to recognize CMLL cases within fractions of a second. Here is the progression towards that.
 
 ### I. Beginner Recognition
 
