@@ -14,6 +14,16 @@ The following solutions are for specific cases where EOLRb will be solved with a
 - skip the dots case, resulting in a 4C skip,
 - or end up with a 3 mover 4C (`M2 U2 M2` after AUF'ing) instead of some 5 mover (e.g. `M' U2 M2 U2 M`).
 
+<div id="dfdb_in_ulur">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .case("M' U2 M' U' M2 U")
+    ('#dfdb_in_ulur');
+</script>
+
+Recognition: DF and DB edges are in the UL UR headlights, and all other U layer edges are the U color. 
+</div>
 
 ## 3-look vs. EOLR: better switch late than early
 
