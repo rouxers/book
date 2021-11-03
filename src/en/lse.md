@@ -10,9 +10,15 @@
 
 ## M2 EOLRb 4C Influencing
 
-The following solutions are for specific cases where EOLRb will be solved with an `M2` and 4C is a non-cycle case. Influencing begins when EO is solved and only one LR edge is on the bottom; both LR edges are then placed on the bottom in a way that results in a shorter 4C. They either:
+The following solutions are for specific cases where EOLRb will be solved with an `M2` and 4C will be a non-cycle case. Influencing begins when EO is solved, one LR edge is on the bottom, and the other LR edge is diagonally opposite it. The solutions either:
 - skip the dots case, resulting in a 4C skip,
-- or end up with a 3 mover 4C (`M2 U2 M2` after AUF'ing) instead of some 5 mover (e.g. `M' U2 M2 U2 M`).
+- or end up with a 2 or 3 mover 4C (`U2 M2` or `M2 U2 M2`) instead of some 5 mover (e.g. `M' U2 M2 U2 M`), after AUF'ing when EOLRb is solved.
+
+Either way, they're more efficient.
+
+The general rule for the shown cases is to do an `M` move such that the top LR edge moves to the bottom, do a `U2`, and repeat the initial `M` move.
+
+For cases that aren't shown, do the regular swap that swaps the LR edge on top with the edge below it (e.g. `M' U2 M` when the LR edge is at UF).
 
 <div id="dfdb_in_ulur">
 <script type="text/javascript">
