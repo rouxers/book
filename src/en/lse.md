@@ -20,7 +20,7 @@ The rule for the shown cases is to do an `M` move such that the top LR edge move
 
 Otherwise for all other M2 EOLRb cases with a non-cycle 4C case, do the regular swap that swaps the LR edge on top with the edge below it (e.g. `M' U2 M` when the LR edge is at UF).
 
-The cases are quite easy to recognise by only looking at the U-face colors and patterns; only 2 of the stickers on top are the D-face color, and they'll either be positioned in UL/UR or the U-center and UF or UB.
+The cases are quite easy to recognise by only looking at the U-face colors and pattern; only 2 of the stickers on top are the D-face color, and they'll either be positioned in UL/UR or the U-center and UF or UB.
 
 **DFDB in ULUR:**
 <div id="dfdb_in_ulur">
@@ -31,7 +31,7 @@ The cases are quite easy to recognise by only looking at the U-face colors and p
     ('#dfdb_in_ulur');
 </script>
 
-Recognition: The only 2 D-face colored stickers on the U layer (will be the DF and DB edges) are positioned where UL and UR belong.
+Recognition: The only 2 D-face colored stickers on top (will be the DF and DB edges) are positioned where UL and UR belong.
 </div>
 
 **2 D-stickers on M slice and U layer**
