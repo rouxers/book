@@ -18,7 +18,7 @@ Either way, they're more efficient.
 
 The rule for the shown cases is to do an `M` move such that the top LR edge moves to the bottom, do a `U2`, and repeat the initial `M` move.
 
-Otherwise for unshown cases with a non-cycle 4C case, do the regular swap that swaps the LR edge on top with the edge below it (e.g. `M' U2 M` when the LR edge is at UF).
+Otherwise for all other M2 EOLRb cases with a non-cycle 4C case, do the regular swap that swaps the LR edge on top with the edge below it (e.g. `M' U2 M` when the LR edge is at UF).
 
 **DFDB in ULUR:**
 <div id="dfdb_in_ulur">
@@ -29,7 +29,19 @@ Otherwise for unshown cases with a non-cycle 4C case, do the regular swap that s
     ('#dfdb_in_ulur');
 </script>
 
-Recognition: DF and DB edges are where UL and UR belong, and all other U layer edges are the U color.
+Recognition: DF and DB edges are where UL and UR belong, and all other U layer stickers are the U-face's color (in this case, yellow).
+</div>
+
+**2 D-facelets on top**
+<div id="twoDFaceletsOnTop">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .case("M U2 M U' M2' U M2' U2")
+    ('#twoDFaceletsOnTop');
+</script>
+
+Recognition: There are 2 D-face colored stickers on the U layer and in the M slice, and all other U layer stickers are the U-face's color.
 </div>
 
 ## 3-look vs. EOLR: better switch late than early
