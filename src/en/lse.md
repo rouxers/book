@@ -29,19 +29,19 @@ Otherwise for all other M2 EOLRb cases with a non-cycle 4C case, do the regular 
     ('#dfdb_in_ulur');
 </script>
 
-Recognition: DF and DB edges are where UL and UR belong, and all other U layer stickers are the U-face's color (in this case, yellow).
+Recognition: The only 2 D-face colored stickers on the U layer (will be the DF and DB edges) are positioned where UL and UR belong.
 </div>
 
-**2 D-facelets on top**
-<div id="twoDFaceletsOnTop">
+**2 D-stickers on M slice and U layer**
+<div id="twoDstickersOnTop">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:400, height:400})
     .case("M U2 M U' M2' U M2' U2")
-    ('#twoDFaceletsOnTop');
+    ('#twoDstickersOnTop');
 </script>
 
-Recognition: There are 2 D-face colored stickers on the U layer and in the M slice, and all other U layer stickers are the U-face's color.
+Recognition: The only 2 D-face colored stickers on top are in the M slice and are connected.
 </div>
 
 ## 3-look vs. EOLR: better switch late than early
