@@ -16,10 +16,11 @@ The following solutions are for specific cases where EOLRb will be solved with a
 
 Either way, they're more efficient.
 
-The general rule for the shown cases is to do an `M` move such that the top LR edge moves to the bottom, do a `U2`, and repeat the initial `M` move.
+The rule for the shown cases is to do an `M` move such that the top LR edge moves to the bottom, do a `U2`, and repeat the initial `M` move.
 
-For cases that aren't shown, do the regular swap that swaps the LR edge on top with the edge below it (e.g. `M' U2 M` when the LR edge is at UF).
+Otherwise for unshown cases with a non-cycle 4C case, do the regular swap that swaps the LR edge on top with the edge below it (e.g. `M' U2 M` when the LR edge is at UF).
 
+**DFDB in ULUR:**
 <div id="dfdb_in_ulur">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -28,7 +29,7 @@ For cases that aren't shown, do the regular swap that swaps the LR edge on top w
     ('#dfdb_in_ulur');
 </script>
 
-Recognition: DF and DB edges are in the UL UR headlights, and all other U layer edges are the U color. 
+Recognition: DF and DB edges are where UL and UR belong, and all other U layer edges are the U color.
 </div>
 
 ## 3-look vs. EOLR: better switch late than early
