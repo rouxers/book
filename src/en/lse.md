@@ -8,11 +8,24 @@
 
 # LSE
 
-## EOLRb 4C Influencing
+## Regular EOLRb insertions
+TODO
+
+<div id="lrMatchingCorners">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .case("M' U2 M' U")
+    ('#lrMatchingCorners');
+</script>
+
+## EOLRb 4C Non-Cycle Influencing
 
 The following solutions are for specific cases where 4C will be a non-cycle case. Influencing begins when EO is solved, and involves inserting LR edges in a non-typical fashion. 
 
-For cases not shown, one should insert LR edges in the normal way, e.g. swapping an upper layer LR edge with the edge below it by doing an `M/M'` move to keep that LR edge on top, then a `U2`, then the opposite of the first `M/M'` move.
+For cases **not shown**, one should:
+- insert LR edges in the normal way (as shown above)
+- or for swapping the upper layer LR edge with the edge below it (to get both LR edges on the bottom), do an `M/M'` move to keep that LR edge on top, then a `U2`, then the opposite of the first `M/M'` move. The solutions below typically do the opposite of this.
 
 The solutions either:
 - skip the dots case, resulting in a 4C skip,
@@ -31,7 +44,7 @@ The cases are quite easy to recognise by only looking at the U-face colors and p
     ('#dfdb_in_ulur');
 </script>
 
-Recognition: The only 2 D-face colored stickers on top (will be the DF and DB edges) are positioned where UL and UR belong.
+Recognition: DF and DB edges are where UL and UR belong.
 </div>
 
 **2 D-stickers on M slice and U layer**
@@ -44,6 +57,18 @@ Recognition: The only 2 D-face colored stickers on top (will be the DF and DB ed
 </script>
 
 Recognition: The only 2 D-face colored stickers on top are in the M slice and are connected.
+</div>
+
+**Dots Skip 1**
+<div id="dotsSkip1">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .case("M' U2 M2 U2 M' U")
+    ('#dotsSkip1');
+</script>
+
+Recognition: DF and DB edges are where UF UB belong.
 </div>
 
 ## 3-look vs. EOLR: better switch late than early
