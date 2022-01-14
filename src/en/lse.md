@@ -33,18 +33,17 @@ The solutions either:
 
 Either way, they're more efficient.
 
-The cases are quite easy to recognise by only looking at the U-face colors and pattern; only 2 of the stickers on top are the D-face color, and they'll either be positioned in UL/UR or the U-center and UF or UB.
+The cases are quite easy to recognise by only looking at the U-face colors and pattern; form your own recognition methods.
 
 **DFDB in ULUR:**
 <div id="dfdb_in_ulur">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:400, height:400})
-    .case("M' U2 M' U' M2 U")
+    .case("M U2 M U' M2 U")
     ('#dfdb_in_ulur');
 </script>
 
-Recognition: DF and DB edges are where UL and UR belong.
 </div>
 
 **2 D-stickers on M slice and U layer**
@@ -56,7 +55,6 @@ Recognition: DF and DB edges are where UL and UR belong.
     ('#twoDstickersOnTop');
 </script>
 
-Recognition: The only 2 D-face colored stickers on top are in the M slice and are connected.
 </div>
 
 **Dots Skip 1**
@@ -64,11 +62,22 @@ Recognition: The only 2 D-face colored stickers on top are in the M slice and ar
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
     .size({width:400, height:400})
-    .case("M' U2 M2 U2 M' U")
+    .case("U' M' U2 M2 U2 M' U")
     ('#dotsSkip1');
 </script>
 
-Recognition: DF and DB edges are where UF UB belong.
+</div>
+
+**Dots Skip 2**
+<div id="dotsSkip2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .case("U' M' U2 M2 U2 M' U M2")
+    ('#dotsSkip2');
+</script>
+
+Note: Less efficient than inserting normally and solving dots with `E2`, but you may prefer this.
 </div>
 
 ## 3-look vs. EOLR: better switch late than early
