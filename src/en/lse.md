@@ -9,8 +9,20 @@
 # LSE
 
 ## Regular EOLRb insertions
-TODO
 
+**Normal swap to bring top LR to bottom**
+<div id="regularSwap">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .case("M' U2 M U M2 U'")
+    ('#regularSwap');
+</script>
+
+For swapping the upper layer LR edge with the edge below it (to get both LR edges on the bottom), do an `M/M'` move to keep that LR edge on top, then a `U2`, then the opposite of the first `M/M'` move
+</div>
+
+**Top LR with matching corners**
 <div id="lrMatchingCorners">
 <script type="text/javascript">
   TTk.AlgorithmPuzzle(3)
@@ -19,13 +31,26 @@ TODO
     ('#lrMatchingCorners');
 </script>
 
+Do an `M/M'` move to keep the top LR edge on top, do a `U2` then repeat the first `M/M'` move.
+</div>
+
+**Top LR with opposite corners**
+<div id="lrOppositeCorners">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .case("M U2 M' U")
+    ('#lrOppositeCorners');
+</script>
+
+Do an `M/M'` move to move the top LR edge to the bottom, do a `U2` then do the opposite of the first `M/M'` move.
+</div>
+
 ## EOLRb 4C Non-Cycle Influencing
 
 The following solutions are for specific cases where 4C will be a non-cycle case. Influencing begins when EO is solved, and involves inserting LR edges in a non-typical fashion. 
 
-For cases **not shown**, one should:
-- insert LR edges in the normal way (as shown above)
-- or for swapping the upper layer LR edge with the edge below it (to get both LR edges on the bottom), do an `M/M'` move to keep that LR edge on top, then a `U2`, then the opposite of the first `M/M'` move. The solutions below typically do the opposite of this.
+For cases **not shown**, one should insert LR edges normally as shown above. The solutions below typically insert them the opposite way.
 
 The solutions either:
 - skip the dots case, resulting in a 4C skip,
