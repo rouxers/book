@@ -8,17 +8,17 @@
 
 # LSE
 
-## M2 EOLRb 4C Influencing
+## EOLRb 4C Influencing
 
-The following solutions are for specific cases where EOLRb will be solved with an `M2` and 4C will be a non-cycle case. Influencing begins when EO is solved, one LR edge is on the bottom, and the other LR edge is diagonally opposite it. The solutions either:
+The following solutions are for specific cases where 4C will be a non-cycle case. Influencing begins when EO is solved, and involves inserting LR edges in a non-typical fashion. 
+
+For cases not shown, one should insert LR edges in the normal way, e.g. swapping an upper layer LR edge with the edge below it by doing an `M/M'` move to keep that LR edge on top, then a `U2`, then the opposite of the first `M/M'` move.
+
+The solutions either:
 - skip the dots case, resulting in a 4C skip,
 - or end up with a 2 or 3 mover 4C (`U2 M2` or `M2 U2 M2`) instead of some 5 mover (e.g. `M' U2 M2 U2 M`), after AUF'ing when EOLRb is solved.
 
 Either way, they're more efficient.
-
-The rule for the shown cases is to do an `M` move such that the top LR edge moves to the bottom, do a `U2`, and repeat the initial `M` move.
-
-Otherwise for all other M2 EOLRb cases with a non-cycle 4C case, do the regular swap that swaps the LR edge on top with the edge below it (e.g. `M' U2 M` when the LR edge is at UF).
 
 The cases are quite easy to recognise by only looking at the U-face colors and pattern; only 2 of the stickers on top are the D-face color, and they'll either be positioned in UL/UR or the U-center and UF or UB.
 
