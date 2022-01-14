@@ -104,6 +104,28 @@ The DFDB edge on top (blue white edge in this case) is adjacent to the center of
 The DFDB edge on top (green white edge in this case) is adjacent to the center of the opposite color (blue).
 </div>
 
+**Dots Skip 5**
+<div id="dotsSkip5">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .case("M' U2 M U2 M2 U' M2")
+    ('#dotsSkip5');
+</script>
+
+</div>
+
+**Dots Skip 6**
+<div id="dotsSkip6">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .case("U M U2 M U2 M2 U' M2")
+    ('#dotsSkip6');
+</script>
+
+</div>
+
 ## 3-look vs. EOLR: better switch late than early
 
 ## 3-look Progression
