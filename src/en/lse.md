@@ -80,6 +80,18 @@ The cases are quite easy to recognise by only looking at the U-face colors and p
 Note: Less efficient than inserting normally and solving dots with `E2`, but you may prefer this.
 </div>
 
+**Dots Skip 3**
+<div id="dotsSkip3">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .case("M U2 M U2 M2 U'")
+    ('#dotsSkip3');
+</script>
+
+The DFDB edge on top (blue white edge in this case) is adjacent to the center of the opposite color (green).
+</div>
+
 ## 3-look vs. EOLR: better switch late than early
 
 ## 3-look Progression
