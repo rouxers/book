@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>概览 - 桥式指南</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html">序</a></li><li class="chapter-item expanded affix "><a href="overview.html" class="active">概览</a></li><li class="chapter-item expanded "><a href="blockbuilding.html"><strong aria-hidden="true">1.</strong> 两桥的搭建</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="fb.html"><strong aria-hidden="true">1.1.</strong> 左桥</a></li><li class="chapter-item expanded "><a href="sb.html"><strong aria-hidden="true">1.2.</strong> 右桥</a></li><li class="chapter-item expanded "><a href="fb+dr.html"><strong aria-hidden="true">1.3.</strong> FB+DR等高级技术</a></li></ol></li><li class="chapter-item expanded "><a href="l10p.html"><strong aria-hidden="true">2.</strong> 余下块的还原</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cmll.html"><strong aria-hidden="true">2.1.</strong> 顶层四角(CMLL)</a></li><li class="chapter-item expanded "><a href="lse.html"><strong aria-hidden="true">2.2.</strong> 后六棱(LSE)</a></li></ol></li><li class="chapter-item expanded "><a href="hardware.html"><strong aria-hidden="true">3.</strong> 硬件篇</a></li><li class="chapter-item expanded "><a href="beginner.html"><strong aria-hidden="true">4.</strong> 新手资源</a></li><li class="chapter-item expanded "><a href=".switching.html"><strong aria-hidden="true">5.</strong> 从CFOP转桥的建议</a></li><li class="chapter-item expanded "><a href="faqs.html"><strong aria-hidden="true">6.</strong> 常见问题解答</a></li><li class="chapter-item expanded affix "><a href="contributors.html">贡献者</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <button id="language-toggle" class="icon-button" type="button" title="Select language" aria-label="Select language" aria-haspopup="true" aria-expanded="false" aria-controls="language-list">
+                            <i class="fa fa-globe"></i>
+                        </button>
+                        <ul id="language-list" class="language-popup" aria-label="Languages" role="menu">
+                            <li role="none"><a href="../cn/overview.html"><button role="menuitem" class="language" id="light">中文</button></a></li>
+                            <li role="none"><a href="../en/overview.html"><button role="menuitem" class="language" id="light">English</button></a></li>
+                        </ul>
+                    </div>
+
+                    <h1 class="menu-title">桥式指南</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="概览"><a class="header" href="#概览">概览</a></h1>
+<h2 id="如何阅读这本书"><a class="header" href="#如何阅读这本书">如何阅读这本书</a></h2>
+<p>《桥式读本》适用于所有水平段的桥式玩家，你只要掌握入门级知识即可。如果还完全不会桥式，推荐先看<a href="https://tutorial.rouxers.com">这里</a>的桥式入门教程。</p>
+<p>本书并无固定的阅读顺序。根据你的需求，可以参考以下的读法：</p>
+<ul>
+<li>如果你对某个话题有兴趣（例如左桥手法，EOLR学习路线等），可以直接找到相应的章节，阅读其内容，并找到其他高质量资源的链接。</li>
+<li>如果你没有特定学习目标，可以先扫读一遍每章的概览，来发现你感兴趣的技巧和概念，并进一步学习。</li>
+<li>如果你有具体的问题想问，那它很可能已经被问过很多次了！因此我们创建了<a href="./faqs.html">常见问答</a>页面，来解答大家可能有的问题。去那边找找看吧！</li>
+</ul>
+<h2 id="本书的构造"><a class="header" href="#本书的构造">本书的构造</a></h2>
+<p>大体来说，本书的构造按照桥式的四个步骤来展开：左桥(FB),右桥(SB),顶层四角(CMLL)和后六棱(LSE)。此外，还有几个章节介绍一些不专属于某一步的一般性话题。</p>
+<p>在做桥（左桥+右桥）的章节中，我们会针对速拧的三大要素（即<strong>解法、手法与观察</strong>）分别以小章节来讲解。在每个小章节中，我们先介绍高手应该做到的“理想境界”，再讲解不同水平段选手应该如何制定学习路线。最后，我们会提供一份精心注释过的学习资料清单，供进一步学习使用。</p>
+<p>在顶层四角与后六棱的章节中，我们也尽量按以上原则来行文。额外地，我们会着重于介绍这些步骤的各种变体及其公式。</p>
+<p>另外，虽然单双手技巧有时会有区别，但是为避免琐碎，我们还是放在同一章节里进行讨论。</p>
+<h2 id="如何贡献"><a class="header" href="#如何贡献">如何贡献</a></h2>
+<p>如果你想参与本书写作，请不吝联系任何一位作者。请按照上述”本书构造“来编辑内容。如果你会基本使用github，会用命令行运行简单程序，那么编辑起来会更方便一些。编辑的流程相当简单。先从<a href="https://github.com/rust-lang/mdBook/releases/">这里</a>下载最新版mdbook软件（对应你的操作系统）。克隆本repo到本地文件夹。把mdbook程序copy放到同一个文件夹里。现在你可以本地编辑markdown文件了。此后在命令行运行<code>./mdbook serve</code>，即可生成图书。完成编辑后，只需提交一个pull request即可。通过后，最新版的书就会自动由CI workflow生成在网页上。</p>
+<p>如果你对任何内容有疑问或建议，也请告知我们，以便在以后的版本中整合你的反馈。读者的反馈对我们至关重要。</p>
+<h2 id="版本更新历史"><a class="header" href="#版本更新历史">版本更新历史</a></h2>
+<ul>
+<li>version 0.1
+<ul>
+<li>还在完善中，我们将尽快推出完整版.</li>
+</ul>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="blockbuilding.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="blockbuilding.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

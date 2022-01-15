@@ -1,0 +1,749 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title></title>
+        <meta name="robots" content="noindex" />
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html">序</a></li><li class="chapter-item expanded affix "><a href="overview.html">概览</a></li><li class="chapter-item expanded "><a href="blockbuilding.html"><strong aria-hidden="true">1.</strong> 两桥的搭建</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="fb.html"><strong aria-hidden="true">1.1.</strong> 左桥</a></li><li class="chapter-item expanded "><a href="sb.html"><strong aria-hidden="true">1.2.</strong> 右桥</a></li><li class="chapter-item expanded "><a href="fb+dr.html"><strong aria-hidden="true">1.3.</strong> FB+DR等高级技术</a></li></ol></li><li class="chapter-item expanded "><a href="l10p.html"><strong aria-hidden="true">2.</strong> 余下块的还原</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="cmll.html"><strong aria-hidden="true">2.1.</strong> 顶层四角(CMLL)</a></li><li class="chapter-item expanded "><a href="lse.html"><strong aria-hidden="true">2.2.</strong> 后六棱(LSE)</a></li></ol></li><li class="chapter-item expanded "><a href="hardware.html"><strong aria-hidden="true">3.</strong> 硬件篇</a></li><li class="chapter-item expanded "><a href="beginner.html"><strong aria-hidden="true">4.</strong> 新手资源</a></li><li class="chapter-item expanded "><a href=".switching.html"><strong aria-hidden="true">5.</strong> 从CFOP转桥的建议</a></li><li class="chapter-item expanded "><a href="faqs.html"><strong aria-hidden="true">6.</strong> 常见问题解答</a></li><li class="chapter-item expanded affix "><a href="contributors.html">贡献者</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <button id="language-toggle" class="icon-button" type="button" title="Select language" aria-label="Select language" aria-haspopup="true" aria-expanded="false" aria-controls="language-list">
+                            <i class="fa fa-globe"></i>
+                        </button>
+                        <ul id="language-list" class="language-popup" aria-label="Languages" role="menu">
+                            <li role="none"><a href="../cn/print.html"><button role="menuitem" class="language" id="light">中文</button></a></li>
+                            <li role="none"><a href="../en/print.html"><button role="menuitem" class="language" id="light">English</button></a></li>
+                        </ul>
+                    </div>
+
+                    <h1 class="menu-title">桥式指南</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="序"><a class="header" href="#序">序</a></h1>
+<p>魔方速拧的世界里，虽有海量资源，却鲜有好的指南来予以解释，加以指引。新手常有这样的困惑：以我的水平，下一步应该学什么？某项技术我是否该学，该何时学？学完的效果是什么？我的学习路线是否合理？某个视频质量如何，是否还有更优秀的资源？诸如此类的问题，必有一份指南，方能指点迷津。不然玩家往往不知所措，甚至误入歧途。</p>
+<p>针对此种现象，这本《桥式指南》应然而生。本书旨在填补桥式速拧中，此类指南的空缺。它将作为一本“用户手册”，来教会你怎么选择最适合自己水平段的优质资源，以及如何制定学习路线和调整期待。</p>
+<p>内容上，本书可看作是提速攻略与资源整理的一个结合体。作者们提供自己的见解与知识储备来为大家答疑解惑，希望为读者提供这样的一个体验：读完之后，对下一步提速，要学什么，怎么学，应有豁然开朗之感。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="概览"><a class="header" href="#概览">概览</a></h1>
+<h2 id="如何阅读这本书"><a class="header" href="#如何阅读这本书">如何阅读这本书</a></h2>
+<p>《桥式读本》适用于所有水平段的桥式玩家，你只要掌握入门级知识即可。如果还完全不会桥式，推荐先看<a href="https://tutorial.rouxers.com">这里</a>的桥式入门教程。</p>
+<p>本书并无固定的阅读顺序。根据你的需求，可以参考以下的读法：</p>
+<ul>
+<li>如果你对某个话题有兴趣（例如左桥手法，EOLR学习路线等），可以直接找到相应的章节，阅读其内容，并找到其他高质量资源的链接。</li>
+<li>如果你没有特定学习目标，可以先扫读一遍每章的概览，来发现你感兴趣的技巧和概念，并进一步学习。</li>
+<li>如果你有具体的问题想问，那它很可能已经被问过很多次了！因此我们创建了<a href="./faqs.html">常见问答</a>页面，来解答大家可能有的问题。去那边找找看吧！</li>
+</ul>
+<h2 id="本书的构造"><a class="header" href="#本书的构造">本书的构造</a></h2>
+<p>大体来说，本书的构造按照桥式的四个步骤来展开：左桥(FB),右桥(SB),顶层四角(CMLL)和后六棱(LSE)。此外，还有几个章节介绍一些不专属于某一步的一般性话题。</p>
+<p>在做桥（左桥+右桥）的章节中，我们会针对速拧的三大要素（即<strong>解法、手法与观察</strong>）分别以小章节来讲解。在每个小章节中，我们先介绍高手应该做到的“理想境界”，再讲解不同水平段选手应该如何制定学习路线。最后，我们会提供一份精心注释过的学习资料清单，供进一步学习使用。</p>
+<p>在顶层四角与后六棱的章节中，我们也尽量按以上原则来行文。额外地，我们会着重于介绍这些步骤的各种变体及其公式。</p>
+<p>另外，虽然单双手技巧有时会有区别，但是为避免琐碎，我们还是放在同一章节里进行讨论。</p>
+<h2 id="如何贡献"><a class="header" href="#如何贡献">如何贡献</a></h2>
+<p>如果你想参与本书写作，请不吝联系任何一位作者。请按照上述”本书构造“来编辑内容。如果你会基本使用github，会用命令行运行简单程序，那么编辑起来会更方便一些。编辑的流程相当简单。先从<a href="https://github.com/rust-lang/mdBook/releases/">这里</a>下载最新版mdbook软件（对应你的操作系统）。克隆本repo到本地文件夹。把mdbook程序copy放到同一个文件夹里。现在你可以本地编辑markdown文件了。此后在命令行运行<code>./mdbook serve</code>，即可生成图书。完成编辑后，只需提交一个pull request即可。通过后，最新版的书就会自动由CI workflow生成在网页上。</p>
+<p>如果你对任何内容有疑问或建议，也请告知我们，以便在以后的版本中整合你的反馈。读者的反馈对我们至关重要。</p>
+<h2 id="版本更新历史"><a class="header" href="#版本更新历史">版本更新历史</a></h2>
+<ul>
+<li>version 0.1
+<ul>
+<li>还在完善中，我们将尽快推出完整版.</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="两桥的搭建"><a class="header" href="#两桥的搭建">两桥的搭建</a></h1>
+<!-- | ![](http://cube.rider.biz/visualcube.php?fmt=svg&bg=t&size=150&stage=f2b&alg=RUM%27UR%27U2) | (U2) R U M' U R' <br> (U2) R U' M U' R'|
+|:--:|:--:| -->
+<p>本章介绍如何提升搭桥的能力。我们将逐个讲解以下话题：底色/桥色选择、左桥、右桥、和其他两桥搭建法。</p>
+<h2 id="块筑构blockbuilding的大体策略"><a class="header" href="#块筑构blockbuilding的大体策略">块筑构(Blockbuilding)的大体策略</a></h2>
+<p>块筑构，英文blockbuilding,是指用直觉可以理解的方法去高效地构造魔方中的一些连在一起的块的方法，例如2x2x2,1x2x3,2x2x3等块。常见于一些速拧方法（包括桥式和petrus）以及最少步项目中。这份最少步教程的<a href="https://fmcsolves.cubing.net/fmc_tutorial_ENG.pdf#section.2.1">“块筑构”章节</a>中有对于基本策略的实例和解释，桥式速拧尤其是左桥中，也可以作为参考。</p>
+<h2 id="左桥-vs-右桥-相同与不同"><a class="header" href="#左桥-vs-右桥-相同与不同">左桥 vs 右桥 ：相同与不同</a></h2>
+<p>如果你从桥式入门法过来，你的左右桥做法应该是比较相似的：先做底下的棱，再做两组棱角对——先把棱块放到底下，再跟角块组到一起，最后插入。但是你要知道，进阶以后，左右桥在本质上的区别就会凸显出来：</p>
+<ul>
+<li>
+<p>左桥的规划是静态的</p>
+<ul>
+<li>你可以运用预观察时间来充分观察魔方，经过深思熟虑，得出一个高效（步数短）的解法。</li>
+</ul>
+</li>
+<li>
+<p>右桥的还原是动态的</p>
+<ul>
+<li>你需要实时地跟踪魔方块，并且在一瞬间对于解法作出决定。你可能会为更好的连贯性（即不停顿）而牺牲解法的效率。</li>
+</ul>
+</li>
+</ul>
+<h2 id="选择你的桥色"><a class="header" href="#选择你的桥色">选择你的桥色</a></h2>
+<p>所谓桥色，指的是你会在几种不同的块上面做左桥。也就是说，左桥你能接受的底面颜色（底色）和左面颜色（侧边色）的颜色组合有哪些。</p>
+<p>作为新手，你可能只有一到两个固定的桥色。那么，为了充分利用盘面的简单情况，你应该拓展自己的桥色，让左桥变得更好做。这个过程应该越早越好，对颜色形成惯性后就不容易改了。</p>
+<p>我们先说叫法。中文里，桥色一般以“A底B色桥”来描述。例如，双底四色桥就是在某一组对面底色（例如白黄底）上，四个侧面色（以白黄为例，就是红橙蓝绿）的左桥都能做。加起来，就是八种选择。</p>
+<p>高手中，最常见的桥色是”双底四色桥“。它提供了八种左桥的选择。如果你现在的桥色只有少于八种，例如你是”单底四色“或”双底双色“，那么高度建议你改到”双底四色桥“。</p>
+<p>这是因为双底四色桥，是能让你利用所有盘面上现成的棱角对的最低要求。左桥选项如果更少的话，你能遇到现成棱角对的概率就会大大降低，你的平均情况就会更困难。如果实在无法拓展，那么四个选择也勉强可以接受，然而若桥色再少的话，就有自讨苦吃之嫌了。</p>
+<!-- (on a side note: x2y2 means that you're more sensitive to the L/R sides as their colors are fixed.  ) -->
+<p>关于六色桥（六底四色桥）: 六色桥能提供24种左桥的选择，在解法上显然比双底四色有优势。然而，与之相应的观察难度会更高。实践中，因为大多数玩家初学时没有刻意拓展底色，所以惯性使然，仍然是双底为主。六底乃至四底桥色的玩家存量不多，现在的代表人物只有四色四底桥的Fahmi Aulia Rachman。有人反对多色底，认为双底再往上意义不大，因为太多左桥观察不过来。然而，也有支持的意见，认为六色底玩家对任意的左桥方块（即122）都有两种拓展到左桥的方式，这样左桥后一组就会简单很多。Fahmi也表示过，四色底确实帮助他，让很多左桥都变得很简单，因而能在预观察时看到更远（例如FB+SS)。总而言之，多色底桥确实是值得探索的，但也不必强求。</p>
+<p>关于不同桥色的步数统计：如果你对此感兴趣，可以参照以下资源：</p>
+<ul>
+<li><a href="https://docs.google.com/spreadsheets/d/1EectP3O_qwQp_2WohbDrlohxhs2ee17sjFfxZr_-D1g/edit#gid=0">桥式步数统计表</a> - 比起单底四色桥，双底四色桥能提高左桥方块简单情况的概率从不到60%到80%.</li>
+</ul>
+<p>补充说明：英文的底色和桥色一般是这样描述的：用一到两个转体操作来指代，例如x2y。意思是说，随便选定一个你会的左桥，然后对魔方做以下转体之一： {y, y', y2, x2, x2y, x2y', x2y2}（一串操作，其中每个操作都属于x2或者y的叠加)，那么转体操作完成后的那个左桥，一定也是你会做的左桥，而且所有你会做的左桥，也都能通过某一串这样的转体操作来达到。或许有点难以理解？记住结论就可以：x2y就对应我们常说的“双底四色桥”。x2y2对应“双底双色桥”。y对应“单底四色桥”。例外地，四底四色桥无法直接描述，一般称之为“dual x2y”,即“双x2y”。最后，六色桥（六底四色桥）一般称之为“CN (Color Neutral)”。</p>
+<div style="break-before: page; page-break-before: always;"></div><script type="text/javascript" src="twistysim.js"></script>
+<style type="text/css" rel="stylesheet">
+/* modifies the opacity of the cube wireframe */
+.ttk-shp-poly {
+    stroke-opacity: 0.3;
+}
+</style>
+<h1 id="左桥"><a class="header" href="#左桥">左桥</a></h1>
+<h2 id="解法篇"><a class="header" href="#解法篇">解法篇</a></h2>
+<h3 id="第一步-掌握基本的筑块法"><a class="header" href="#第一步-掌握基本的筑块法">第一步: 掌握基本的筑块法</a></h3>
+<p>入门法往往是固定先做底棱的。现在你应该多了解几种搭建左桥的策略了。大体来说，左桥的搭建有四种策略，总结在下面的表里。</p>
+<ul>
+<li>方块+一组（最为常用的两种）
+<ul>
+<li>1.先做底棱，再做两组棱角对 </li>
+<li>2.通过横向【棱角对】和【棱心对】构成方块，再做一组棱角对</li>
+</ul>
+</li>
+<li>3.三三法</li>
+<li>4.先做其他块，最后利用S插入底棱</li>
+</ul>
+<p>在看实例之前，建议先看一些介绍策略的视频，对四种方法有基本的认识。
+视频里的表述会各有不同，但万变不离这四种方法，尤其是前两种。</p>
+<p>左桥策略讲解：</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=0Cq3YDud1dA">如何在观察时高效搭建左桥 by teoidus</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLAmLIbUNCUR_e9lmyvcjAb18qlnJ72hGv">Louis的左桥教学</a></li>
+<li><a href="https://www.youtube.com/watch?v=i9zxR5mkgQs">Iuri的Line + Line教学</a></li>
+</ul>
+<p>适合新手的左桥实例：</p>
+<ul>
+<li>Kavin的一些实例对新手非常友好。它们介绍了最朴实的“方块+一组”系两种策略，而不涉及预控等高级技巧。
+<ul>
+<li><a href="https://www.youtube.com/watch?v=sRTVptb2QrY">Pair + Pair 实例（即文中方法1）</a></li>
+<li><a href="https://www.youtube.com/watch?v=YyY_okZ5Fj0">Square + Pair 实例（即文中方法2）</a></li>
+</ul>
+</li>
+</ul>
+<p>在我们结束解法篇之前，请留意左桥解法的规划无非是“解法”与“跟踪”这两方面。其中尤以解法更为重要一些。现在，你只需关注把解法做对就行，我们会在本页最后细讲跟踪。 </p>
+<h3 id="第二步提升解法"><a class="header" href="#第二步提升解法">第二步：提升解法</a></h3>
+<p>接下来，你要进一步地提升解法。可以在以下几个方面做改进（不分顺序）。精简高效的解法不仅做起来更快，从中得到的求解能力还能帮助你减少观察时间。</p>
+<ul>
+<li>预控 (Influencing)
+<ul>
+<li>定义：通过上一阶段的解法选择来“预先控制”下一阶段，从而实现优化整体解法的技术</li>
+<li>无论是方块+一组，还是三三法，都属于两阶段的解法。前者先做方块，再做一组。后者先做E层三块，再做D层三块。预控的意义是，我们要找到阶段一（方块或E层三块）的另解，以优化阶段二（后一组或D层三块）的情况。</li>
+<li>换言之，就是改变你原先的阶段一解法，让阶段二比不预控时更好，这样整体解法就更好。 </li>
+<li>总体上，预控有以下手段：
+<ol>
+<li>换一个解法来解决阶段一。见于<a href="fb.html#inf1">例1</a> 和<a href="fb.html#inf2">例2</a>.</li>
+<li>在已有的阶段一解法上插步。（插入用来预控的转动）</li>
+</ol>
+</li>
+<li>通过预控，我们可以移动第二阶段的块，达到以下目的之一：
+<ol>
+<li>使得这些块有更好的朝向。在大多数的实例中皆是如此。</li>
+<li>使得这些块不会被阶段一的解法所扰乱。比如阶段二的块原本就朝向或相对位置很好，那么阶段一的解法就不应该扰动这些块，以免破坏这些好的特征。 见于<a href="fb.html#inf3">例3</a>。</li>
+</ol>
+</li>
+<li>一般来讲，在阶段一的解法中，总有阶段二的某一个块（棱或角）是无法预控，或不值得去预控的。我们只需预判这个无法预控的块，在阶段一结束后所在的位置。 Predict where the uninfluencable piece will end up after the first stage, and attempt to influence the influencable piece to improve the second stage case.</li>
+<li>Your influencing moveset will be restricted in some way so it doesn't affect your first stage solution, so visualise the effect of moves within this moveset on influencable pieces to figure out your influencing moves (if any).</li>
+<li>Note that influencing is not always applicable or necessary.</li>
+</ul>
+</li>
+</ul>
+<h3 id="理解棱角对的相对位置和组对思路"><a class="header" href="#理解棱角对的相对位置和组对思路">理解棱角对的相对位置和组对思路</a></h3>
+<p>为了在解法中加入预控，
+理解左桥棱角对所处位置，和对应的组对解法的思路，是非常关键的。
+This is crucial for understanding many of the influencing solutions and determining how to solve second stage after predicting first stage.</p>
+<p>The minimum information needed to know how to solve a FB pair:</p>
+<ul>
+<li>FB pair's edge position and orientation</li>
+<li>FB pair's corner's position and location of its D-face sticker</li>
+</ul>
+<p>For example, if the front pair's corner is on the <code>U</code> layer with its D-face sticker also on the <code>U</code> layer, then to have the corner be in the same alignment with its edge (such that when they're adjacent, they form a correctly connected pair):</p>
+<ul>
+<li>the edge can be placed in FR in an orientation such that it is an <code>F2</code> from being solved.</li>
+<li>the edge can be placed misoriented in its solved position (FL).</li>
+<li>the edge can be placed in BR such that the edge will be solved with <code>R2 F2</code>.</li>
+</ul>
+<p>These relations can be understood through experience and observation. Using a trainer as well as always observing the aforementioned minimum information of an FB pair before solving it helps.</p>
+<p>The above logic can be applied to line solutions as well, especially with understanding how to pair the DL edge with an FB corner to build the D-line. For example:</p>
+<ul>
+<li>DL edge is in DF, and is a <code>D'</code> move away from being solved.</li>
+<li>FB's front corner is in UFR, with its D-face sticker on the R layer.</li>
+<li>Thus, the corner can be connected with the DL edge using <code>R U R'</code>.</li>
+</ul>
+<h3 id="step-ii-improve-your-solutions"><a class="header" href="#step-ii-improve-your-solutions">Step II: Improve Your Solutions</a></h3>
+<p>Next, you want to improve your solutions. There are several aspects you can work on, in no particular order. Not only are easier solutions faster to execute, but the ability to come up with them will also help bring down your inspection time.</p>
+<ul>
+<li>Influencing
+<ul>
+<li><code>square + pair</code> and <code>line + line</code> are both two-stage solutions, and the point is we want to find alternative ways to solve the first stage i.e. <code>square</code>/<code>E-line</code> so we get a better second stage case i.e. <code>pair</code>/<code>D-line</code>, respectively. <sup class="footnote-reference"><a href="#1">1</a></sup></li>
+<li>Influencing involves altering your initial first stage solution so that the second stage case is better than without any influencing, and your overall FB solution is also better.</li>
+<li>In general, influencing can be one of the following:
+<ol>
+<li>Solving the same first stage differently for a better second stage, as seen in <a href="fb.html#inf1">example 1</a> 
+and <a href="fb.html#inf2">example 2</a>.</li>
+<li>Adding influencing moves to an already existing first stage solution.</li>
+</ol>
+</li>
+<li>Influencing moves can be used to move second stage pieces with 2 different intents:
+<ol>
+<li>So that they'll be affected by first stage solution moves to achieve better orientation, 
+as seen in the majority of examples.</li>
+<li>So that they won't be affected by first stage solution moves, such as when second stage pieces are in a good orientation or alignment (either before or after first stage), and first stage ruins that characteristic, as seen in <a href="fb.html#inf3">example 3</a>.</li>
+</ol>
+</li>
+<li>Typically in first stage solutions, one of the final pieces of the second stage (edge or corner) cannot 
+be influenced, or is not worth influencing. Predict where the uninfluencable piece will end up after the first stage, and attempt to influence the influencable piece to improve the second stage case.</li>
+<li>Your influencing moveset will be restricted in some way so it doesn't affect your first stage solution, so visualise the effect of moves within this moveset on influencable pieces to figure out your influencing moves (if any).</li>
+<li>Note that influencing is not always applicable or necessary.</li>
+</ul>
+</li>
+</ul>
+<p>Influencing examples:</p>
+<p><strong>Example 1:</strong></p>
+<div id="inf1">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("U2 R B2 U' F2")
+    ('#inf1');
+</script>
+<p><code>U r B'</code> builds the back square. </p>
+<p>However, <code>U2 R B2</code> as a first stage solution leads to a much shorter second stage solution.</p>
+</div>
+<p><strong>Example 2</strong></p>
+<div id="inf2">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("D' r' U R2 B2 D'")
+    ('#inf2');
+</script>
+<p><code>D' M U R2</code> builds the D-line, although the final piece of E-line (BL) is in a bad position.</p>
+<p>Using <code>r'</code> instead of <code>M</code> leverages the <code>R2</code> to orient BL for an easy <code>B2</code> insertion.</p>
+</div>
+<p><strong>Example 3</strong></p>
+<div id="inf3">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("M' F2 M2 D'")
+    ('#inf3');
+</script>
+<p><code>F2</code> builds the E-line, with DL being misoriented in the D-line.</p>
+<p>Starting with <code>M'</code> causes DL to not be affected by the <code>F2</code>, and become aligned with the D-line
+after the first stage.</p>
+</div>
+<p><strong>Example 4</strong></p>
+<div id="inf4">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("R' B U2 F2")
+    ('#inf4');
+</script>
+<p><code>B</code> builds the back square.</p>
+<p>Starting with <code>R'</code> sets up a much easier last pair solution.</p>
+<p>Additionally, <code>R B M2 F</code> is another FB solution with influencing.</p>
+</div>
+<p><strong>Example 5</strong></p>
+<div id="inf5">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("F D R2 F2")
+    ('#inf5');
+</script>
+<p><code>D</code> builds the back square.</p>
+<p>Starting with <code>F</code> leverages the <code>D</code> to connect the front pair's corner with its edge.</p>
+</div>
+<p><strong>Example 6</strong></p>
+<div id="inf6">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("U2 F R2 B'")
+    ('#inf6');
+</script>
+<p><code>F</code> builds the front square.</p>
+<p>Starting with <code>U2</code> leverages the <code>F</code> to align the back pair's corner with its edge.</p>
+</div>
+<p><strong>Example 7</strong></p>
+<div id="inf7">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("U2 L2 D' B")
+    ('#inf7');
+</script>
+<p><code>L2 D'</code> builds the front square.</p>
+<p>Starting with <code>U2</code> leverages the <code>L2</code> to connect the back pair's corner with its edge.</p>
+</div>
+<p><strong>Example 8</strong></p>
+<div id="inf8">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("L B' D M F")
+    ('#inf8');
+</script>
+<p><code>B' D</code> builds the back square.</p>
+<p>Starting with <code>L</code> leverages the <code>D</code> to align the front pair's corner with its edge.</p>
+</div>
+<p><strong>Example 9</strong></p>
+<div id="inf9">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("B' L' B2 D2")
+    ('#inf9');
+</script>
+<p><code>L' B2</code> builds the bottom line of FB and solves the blue-red edge.</p>
+<p>Starting with <code>B'</code> leverages the <code>B2</code> to also insert the back edge, for a <code>line + line</code> block.</p>
+</div>
+<p><strong>Example 10</strong></p>
+<div id="inf10">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("U R' D F' r' F")
+    ('#inf10');
+</script>
+<p><code>R' D</code> builds the back square.</p>
+<p>Starting with <code>U</code> leverages the <code>R'</code> to align the front pair's edge with its corner, 
+building the front pair after the <code>D</code>.</p>
+</div>
+<p><strong>Example 11</strong></p>
+<div id="inf11">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("R D B M F'")
+    ('#inf11');
+</script>
+<p><code>D B</code> builds the back square.</p>
+<p>Starting with <code>R</code> leverages the <code>B</code> to align the front pair's edge with its corner.</p>
+</div>
+<p><strong>Example 12</strong></p>
+<div id="inf12">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("U2 F D' R' F")
+    ('#inf12');
+</script>
+<p><code>F D'</code> builds the back square.</p>
+<p>Starting with <code>U2</code> leverages the <code>F</code> to align the front pair's corner to its edge after the edge moves from the <code>D'</code>.</p>
+</div>
+<p><strong>Example 13</strong></p>
+<div id="inf13">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("R F' D R' U' B")
+    ('#inf13');
+</script>
+<p><code>F' D</code> builds the front square. 
+Back pair's corner is clearly uninfluencable, so predict the back pair's corner's position and orientation, and then aim to influence the back pair's edge. </p>
+<p>We can predict the back pair's corner will be at DBR after first stage, with its D-face sticker on the bottom. </p>
+<p>We should know from experience that the back pair's edge needs to be misoriented in BR to pair with the back pair's corner when the back pair's corner is in DBR with its D-face sticker on the bottom.</p>
+<p>Thus, starting with <code>R</code> connects the back pair's edge and corner after first stage, for an easy 3 move second stage.</p>
+</div>
+<p><strong>Example 14</strong></p>
+<div id="inf14">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("D' L B' D R' F")
+    ('#inf14');
+</script>
+<p><code>D' B' D</code> builds the back square.</p>
+<p>Adding an <code>L</code> after the <code>D'</code> leverages the <code>D</code> to align the front pair's edge with its corner.</p>
+</div>
+<p><strong>Example 15</strong></p>
+<div id="inf15">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("B' F' U F' R B2")
+    ('#inf15');
+</script>
+<p><code>F' U F'</code> builds the front square.</p>
+<p>Starting with <code>B'</code> leverages the <code>U</code> to align the back pair's corner to its edge, and pairs them after the final <code>F'</code>.</p>
+</div>
+<p><strong>Example 16</strong></p>
+<div id="inf16">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("U' L' U2 L D B2")
+    ('#inf16');
+</script>
+<p><code>L' U L D</code> builds the front square.</p>
+<p>During the <code>L'</code> move, the final pair's corner is <code>U2</code> away from being connected with its edge.</p>
+<p>Starting with <code>U'</code> makes us do that desired <code>U2</code> after the <code>L'</code> to insert the front pair's edge whilst
+connecting the back pair's corner with its edge.</p>
+</div>
+<p><strong>Example 17</strong></p>
+<div id="inf17">
+<script type="text/javascript">
+  TTk.AlgorithmPuzzle(3)
+    .size({width:400, height:400})
+    .fc('wttwttwtttttttttttrttrttttttttttttttbbbbbbtttttottottt')
+    .case("U2 r U' M2 D' B")
+    ('#inf17');
+</script>
+<p><code>r U' M2 D'</code> builds the front square. Back pair's edge can be predicted to be only a <code>B</code> move away from being solved after first stage. Without influencing, the second stage solution is 3 moves.</p>
+<p>In an attempt to influence, we can try seeing the effect of specific <code>U</code> moves before first stage on the back pair's corner (<code>U</code> chosen as it doesn't affect first stage, rather than some <code>B</code> move):</p>
+<ul>
+<li><code>U</code> leads to the back pair's corner being aligned with its edge after first stage, but this is still a 3 move second stage solution, so overall solution is longer.</li>
+<li>Similarly with <code>U'</code>, we have a 3 move second stage solution, so overall solution is longer.</li>
+<li>But with <code>U2</code>, the back pair's corner will be in ULF with its D-face sticker on the L face; this means it's a <code>B</code> move away from being solved, like the back pair's edge, and thus results in a 1 move second stage solution, saving 1 move overall.</li>
+</ul>
+<p>Thus, start with a <code>U2</code>.</p>
+<p>Note that this solution may have been harder to figure out if we tried <code>R U' M2 D'</code> to build the front square.</p>
+</div>
+<ul>
+<li>
+<p>Optimize your Last Pair solution</p>
+<ul>
+<li>FB last pair has lots of cases and elegant solutions that can escape your notice. Drill on these in the following ways: use trainers to get random cases and reference the solutions; do untimed solves and experiment around with different ways to solve the same LP case.</li>
+</ul>
+</li>
+<li>
+<p>Watch Example Solves</p>
+<ul>
+<li>Trainers can only help you so far -- example FB solves remain the best way to learn new ideas. Either watch example solves or go over text reconstructions.</li>
+</ul>
+</li>
+<li>
+<p>Develop a Taste for good FB / FS</p>
+<ul>
+<li>Taste is about being able to tell an easy FB from a hard one quickly without fully planning it out. This would help you take advantage of all the FB options given by your orientation.</li>
+</ul>
+</li>
+</ul>
+<p>Videos:</p>
+<ul>
+<li>Kian's Example Solves</li>
+</ul>
+<p>Reconstructions (text):</p>
+<ul>
+<li>Search for Kian, Alex or Sean's solves on speedcubing databases:
+<ul>
+<li><a href="http://speedcubedb.com/r/index/">SpeedCubeDB</a> - a modern database, roux solves yet to be added</li>
+<li><a href="http://cubesolv.es">CubeSolves</a> - plenty of solves, but no longer maintained</li>
+</ul>
+</li>
+<li>More reconstructions can be found on <a href="https://www.reddit.com/r/rouxles/">Anto's subreddit</a></li>
+</ul>
+<h2 id="turning"><a class="header" href="#turning">Turning</a></h2>
+<ul>
+<li>
+<p>You want to have calm and fluid turning for two reasons:</p>
+<ul>
+<li>You need to give yourself time to track SB pieces, and turning too fast can result in losing track of pieces.</li>
+<li>FB is a bad moveset group that generally involve both F and B moves. It is intrinsically more difficult to fingertrick. If you rush, you could overshoot or get your grips wrong, resulting in bad lockups.</li>
+</ul>
+</li>
+<li>
+<p>Plan out your fingertricks in inspection too:</p>
+<ul>
+<li>Unlike the rest of the solve, FB fingertricking requires your active attention. You should limit your regrips and eliminate pauses between moves. Try to figure all these out in inspection --- This can be just as important as planning out the actual solution! Over time, you'll grow familiar and be able to plan fingertricks automatically.</li>
+</ul>
+</li>
+<li>
+<p>Also, develop a preference for what pairs / triggers are easy for you to execute over time, and try to prioritize them in your FB solution. Use this to guide your FB planning instead of move count as this is more precise and correlated to actual times.</p>
+</li>
+</ul>
+<h2 id="fb-planning--piece-tracking"><a class="header" href="#fb-planning--piece-tracking">FB Planning / Piece Tracking</a></h2>
+<ul>
+<li>If you cannot plan FB entirely, try to plan FS first.</li>
+<li>Planning LP:
+<ul>
+<li>Only need to calculate:
+<ul>
+<li>The edge's position and orientation after FS.</li>
+<li>The corner's position and location of its D-face sticker (white or yellow if x2y) after FS.</li>
+</ul>
+</li>
+<li>From the above information, one should be able to determine the LP case and solve accordingly.</li>
+<li>For example, if the LP edge (where LP is the front pair) is an F move from being solved, the LP corner can be placed at DFR with its D-face sticker on the R face to solve LP with an F move.</li>
+<li>If you calculate that the LP case is bad or mediocre, then try to influence.</li>
+</ul>
+</li>
+<li>Similar logic applies with planning FB line solutions or two-stage solutions in general:
+<ol>
+<li>Determine solution for the first stage.</li>
+<li>Calculate required position/orientation information of second stage pieces.</li>
+<li>Attempt influencing for better overall FB, factoring in fingertrickiness.</li>
+<li>Execute!</li>
+</ol>
+</li>
+<li><a href="http://onionhoney.github.io/roux-trainers/#tracking">Tracking Trainer by Zhouheng</a></li>
+<li><a href="https://www.youtube.com/watch?v=4KLFyN6ZDwk">Partial SpeedBLD technique by Kian</a> - This is arguably underrated as a practice approach. You should try to do them regularly as warmup before solves.</li>
+</ul>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>The &quot;line + line&quot; strategy refers to two lines: E-line (2 edges and 1 center on the E slice) and D-line (1 edge and 2 corners on the D slice). E-lines are usually formed first.</p>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="second-block"><a class="header" href="#second-block">Second Block</a></h1>
+<h2 id="blockbuild-strategy-dr-first-vs-freestyle"><a class="header" href="#blockbuild-strategy-dr-first-vs-freestyle">Blockbuild Strategy: DR First vs. Freestyle?</a></h2>
+<p>DR first is used by most of the world-level rouxers today including Kian Mansour and Sean Villanueva. Most of the existing SB resources are built on top of it. It is easy to make progress with, as it greatly simplifies tracking and pattern recognition for SB blockbuilding.</p>
+<p>Freestyle, in contrast, allows you to be flexible with how you build the second square. It is a superset of DR first. Strategies include make a pair then insert the remaining edge, or insert any edge then insert the remaining pair.</p>
+<p>The consensus is while freestyle potentially leads to better efficiency, it is more demanding of your recognition and tracking skills<sup class="footnote-reference"><a href="#1">1</a></sup>. Empirically,   it has yet to be proven that freestyle can serve as a standalone strategy to attain a speed level comparable to those using DR-first.</p>
+<p>In general, DR first is recommended to beginners and advanced cubers alike as the dominant strategy, while freestyle can act as a supplement, offering shortcuts to building SS whenever you happen to recognize a few easy freestyle patterns as they show up. These SS techniques will be mentioned in the section below.</p>
+<h2 id="solution"><a class="header" href="#solution">Solution</a></h2>
+<h3 id="pair-progression"><a class="header" href="#pair-progression">Pair Progression</a></h3>
+<h3 id="pair-influencing"><a class="header" href="#pair-influencing">Pair Influencing</a></h3>
+<h3 id="ss-shortcuts-and-freestyle-building"><a class="header" href="#ss-shortcuts-and-freestyle-building">SS Shortcuts and Freestyle Building</a></h3>
+<p>Gilles Roux's website [insert link] features some of these algorithms.</p>
+<h2 id="turning-1"><a class="header" href="#turning-1">Turning</a></h2>
+<h2 id="lookahead"><a class="header" href="#lookahead">Lookahead</a></h2>
+<h2 id="fb-sb-transition"><a class="header" href="#fb-sb-transition">FB-SB Transition</a></h2>
+<h2 id="nmcmll-and-variants"><a class="header" href="#nmcmll-and-variants">NMCMLL and Variants</a></h2>
+<p><sup class="footnote-reference"><a href="#1">1</a></sup>: (Most SS strategies are such that once you solve the starting piece/pieces the SS becomes fixed meaning you're left with no options or freedom to select in what order to continue to block-build, whereas DR-first is the only exception among these strategies to NOT fix the SS but rather enables you to choose any of the two remaining pairs (SP). The very existence of two competing options alone would boost the chance of there being a good case, and additionally create room for influencing techniques. Therefore, in order to beat DR first on average, you would need more information about SS, e.g you saw DR is bad and another edge is good and the corresponding SS corner can be paired in such a way that gives an easy SS finish, etc. )</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="advanced-fbdr--more"><a class="header" href="#advanced-fbdr--more">Advanced: FB+DR &amp; more</a></h1>
+<p>(...work in progress)</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="l10p"><a class="header" href="#l10p">L10P</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cmll"><a class="header" href="#cmll">CMLL</a></h1>
+<h2 id="recognition-method-from-beginners-4-tile-to-all-angles"><a class="header" href="#recognition-method-from-beginners-4-tile-to-all-angles">Recognition Method: From beginner's 4-tile to all angles</a></h2>
+<h2 id="algorithms-resources---2h"><a class="header" href="#algorithms-resources---2h">Algorithms Resources - 2H</a></h2>
+<h2 id="algorithms-resources---oh"><a class="header" href="#algorithms-resources---oh">Algorithms Resources - OH</a></h2>
+<h2 id="turning-2"><a class="header" href="#turning-2">Turning</a></h2>
+<h2 id="predicting-cmll-from-sb-last-slot"><a class="header" href="#predicting-cmll-from-sb-last-slot">Predicting CMLL from SB last slot</a></h2>
+<h2 id="predicting-eo-from-cmll"><a class="header" href="#predicting-eo-from-cmll">Predicting EO from CMLL</a></h2>
+<h2 id="predicting-lr-edges-from-cmll"><a class="header" href="#predicting-lr-edges-from-cmll">Predicting LR Edges from CMLL</a></h2>
+<h2 id="cmlleo--pinkie-pie--l10p-variants"><a class="header" href="#cmlleo--pinkie-pie--l10p-variants">CMLLEO / Pinkie Pie / L10P Variants</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="lse"><a class="header" href="#lse">LSE</a></h1>
+<h2 id="3-look-vs-eolr-better-switch-late-than-early"><a class="header" href="#3-look-vs-eolr-better-switch-late-than-early">3-look vs. EOLR: better switch late than early</a></h2>
+<h2 id="3-look-progression"><a class="header" href="#3-look-progression">3-look Progression</a></h2>
+<h2 id="eolr-progression"><a class="header" href="#eolr-progression">EOLR Progression</a></h2>
+<p>It is not recommended to memorize algsheets for EOLR.
+Learn from text descriptions below:</p>
+<ul>
+<li><a href="https://docs.google.com/document/d/1dvGERLfN-0rVwN914HH1zRPHLfdM6d5rPfe0HxOMK08/edit">EOLR Described</a></li>
+<li><a href="https://docs.google.com/document/d/1rb5M9_5CTlozLu9acFIgqq9LYYKaUdnMDX0vcLOURT4/edit%5D">EOLR Described</a></li>
+<li>(TODO: what's their difference? )</li>
+</ul>
+<h3 id="mc-vs-non-mc-better-early-than-late"><a class="header" href="#mc-vs-non-mc-better-early-than-late">MC vs. Non-MC: better early than late</a></h3>
+<h3 id="should-i-add-eobf-on-top-of-eolr"><a class="header" href="#should-i-add-eobf-on-top-of-eolr">Should I add EOBF on top of EOLR?</a></h3>
+<h2 id="4c-prediction-battle-of-recog-methods"><a class="header" href="#4c-prediction-battle-of-recog-methods">4c Prediction: battle of recog methods</a></h2>
+<h2 id="turning-and-fingertrick---2h"><a class="header" href="#turning-and-fingertrick---2h">Turning and Fingertrick - 2H</a></h2>
+<h2 id="turning-and-fingertrick---oh"><a class="header" href="#turning-and-fingertrick---oh">Turning and Fingertrick - OH</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="hardware"><a class="header" href="#hardware">Hardware</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="beginner-resources"><a class="header" href="#beginner-resources">Beginner Resources</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tips-on-switching-from-cfop"><a class="header" href="#tips-on-switching-from-cfop">Tips on Switching from CFOP</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="frequently-asked-questions"><a class="header" href="#frequently-asked-questions">Frequently Asked Questions</a></h1>
+<h2 id="when-should-i-start-learning-full-cmlleolr"><a class="header" href="#when-should-i-start-learning-full-cmlleolr">When should I start learning full CMLL/EOLR?</a></h2>
+<p>It is recommended to learn full CMLL as soon as possible, as you are going to have to learn it eventually. However, as a general guideline, the latest you should begin to learn is when averaging around 20-30 seconds.</p>
+<p>EOLR should only be learnt after learning full CMLL. Similarly to CMLL, learning it as soon as possible is recommended, but a recommended time to start learning is when averaging around 15 seconds.</p>
+<h2 id="how-do-i-improve-my-blocks"><a class="header" href="#how-do-i-improve-my-blocks">How do I improve my blocks?</a></h2>
+<p>We recommend looking at solves from fast roux solvers (Kian, Sean, etc.), and understanding how they plan and optimise their blocks (movecounts, ergonomics). Example solves are preferred as the thought process is explained, but reconstructions are sufficient as well.</p>
+<p>We also recommend using the following block trainers to practice identifying optimal solutions for blocks</p>
+<ul>
+<li><a href="https://cubegrass.appspot.com/block_trainer/">Cubegrass Block Trainer (Contains Full FB, SB, SS and SS Trainers)</a></li>
+<li><a href="https://onionhoney.github.io/roux-trainers/">Zhouheng's Block Trainer (Contains Full Tough FB, FB Solution Generators for any block, Pair+DR, SS, Tracking Trainers)</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="contributors"><a class="header" href="#contributors">Contributors</a></h1>
+<p>Here is a list of the contributors who have helped write this reader.</p>
+<ul>
+<li><a href="https://www.youtube.com/channel/UCJoYx71hIhHOxpsCxa748QA">Zhouheng Sun</a></li>
+<li><a href="https://www.youtube.com/channel/UCOArFOAv0Z64xmorhmhZA5w">Antonio Kam</a></li>
+<li><a href="https://www.youtube.com/user/TheBrutux168">Vincent Wong</a></li>
+<li><a href="https://www.youtube.com/c/stanleydesu">Stanley Su</a></li>
+</ul>
+<p>If you wish to help, feel free to reach out to any one of us! Alternatively, visit our <a href="https://github.com/rouxers/book">GitHub Page</a> and open up a pull request there.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
+        });
+        </script>
+
+    </body>
+</html>
